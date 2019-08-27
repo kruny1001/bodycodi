@@ -50,12 +50,14 @@ function fillDialog(content){
     } else if(content.type == 'absent'){
         dialogTemplate.querySelector('.title').textContent = content.title
         dialogTemplate.querySelector('.longDesc').textContent = content.desc
+        dialogTemplate.querySelector('.dialog-detail2').classList.add('display')
         dialogTemplate.querySelector('.beforeCounter').textContent = content.crntCount
         dialogTemplate.querySelector('.afterCounter').textContent = content.crntCount - 1
     }
     else if(content.type == 'attendance'){
         dialogTemplate.querySelector('.title').textContent = content.title
         dialogTemplate.querySelector('.longDesc').textContent = content.desc
+        dialogTemplate.querySelector('.dialog-detail2').classList.add('display')
         dialogTemplate.querySelector('.beforeCounter').textContent = content.crntCount
         dialogTemplate.querySelector('.afterCounter').textContent = content.crntCount - 1
     }
