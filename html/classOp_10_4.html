@@ -62,86 +62,151 @@
         </div>
         
         <!-- Main Container -->
-        <div id="class-complete" class='container group'>
-            <div class="detail-info">
-                <div class="time-info">
-                    <div class="hour">16:00 - 17:00</div>
-                    <div class="date">6월 3일 화요일</div>
-                </div>
-                <hr>
-                <div class="title"> title </div>
-                <div class="grid-assets">
-                    <div class="asset-row">
-                        <div>예약중</div>
-                        <div>19명</div>
-                    </div>
-                    <div class="asset-row">
-                        <div>출석</div>
-                        <div>12명</div>
-                    </div>
-                    <div class="asset-row">
-                        <div>결석</div>
-                        <div>7명</div>
-                    </div>
-                    <div class="asset-row">
-                        <div>정원</div>
-                        <div>22명</div>
+        <div class="container">
+            <div style="padding:20px;">
+                <div class="card-body">
+                    <div class="search-form active-white ml-auto my-0">
+                        <form class="form-inline">
+                        <input class="search-form-input text-white" type="search" placeholder="예약할 회원의 이름을 검색하세요" aria-label="Search">
+                        <span class="search-button search-button-left" type="submit">
+                            <i class="fa fa-search search-text" aria-hidden="true"></i>
+                        </span>
+                        </form>
                     </div>
                 </div>
-            </div>
-
-            <div class="memo-list">
-                <div class="memo-title">
-                    <div>
-                        <span class="font-dart-gray"> MEMO </span>
-                        <span class="font-light-gray">MAY.03.19</span>
-                    </div>
-                    <div class="font-light-gray text-right"> 수정하기</div>
-                </div>
-                <hr style="margin-top:4px; margin-bottom:4px;">
-                <div class="memo-description">
-                    <div>6월 말 재등록 예정</div>
-                    <div>허리부상 환자 - 척추병원 진단서 확인</div>
-                </div>
-            </div>
-
-            <div class="user-list">
-                <div> 이용회원 목록 (<span class="userNum">12</span>)</div>
-                <ul>
-                    <li class="user-detail">
-                        <div> 1 </div>
-                        <div> 2 </div>
-                        <div> 3 </div>
-                        <div> 4 </div>
-                        <div> 5 </div>
-                        <div> 6 </div>
-                        <div> 7 </div>
-                    </li>
-                    <li class="user-detail">
-                        <div> 1 </div>
-                        <div> 2 </div>
-                        <div> 3 </div>
-                        <div> 4 </div>
-                        <div> 5 </div>
-                        <div> 6 </div>
-                        <div> 7 </div>
-                    </li>
-                    <li class="user-detail">
-                        <div> 1 </div>
-                        <div> 2 </div>
-                        <div> 3 </div>
-                        <div> 4 </div>
-                        <div> 5 </div>
-                        <div> 6 </div>
-                        <div> 7 </div>
+                <ul class="found-user">
+                    <li class="profile-list">
+                        <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                        <div class="name"> 강하은 </div>
+                        <div class="name"> (31세)</div>
+                        <div class="phone"> 010-1000-1004</div>
                     </li>
                 </ul>
+    
+                <div> 
+                    <span>개인레슨 담당회원 </span>
+                    <span>(12)</span>
+                </div>
+                <ul>
+                    <li class="profile-list">
+                        <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                        <div class="name"> 강하은 </div>
+                        <div class="name"> (31세)</div>
+                        <div class="phone"> 010-1000-1004</div>
+                        
+                    </li>
+                    <li class="profile-list">
+                        <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                        <div class="name"> 강하은 </div>
+                        <div class="name"> (31세)</div>
+                        <div class="phone"> 010-1000-1004</div>
+                    </li>
+                    <li class="profile-list">
+                        <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                        <div class="name"> 강하은 </div>
+                        <div class="name"> (31세)</div>
+                        <div class="phone"> 010-1000-1004</div>
+                    </li>
+    
+                    <li class="profile-list">
+                        <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                        <div class="name"> 강하은 </div>
+                        <div class="name"> (31세)</div>
+                        <div class="phone"> 010-1000-1004</div>
+                    </li>
+                    <li class="profile-list">
+                        <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                        <div class="name"> 강하은 </div>
+                        <div class="name"> (31세)</div>
+                        <div class="phone"> 010-1000-1004</div>
+                    </li>
+                </ul>
+                
             </div>
-    
-            
-    
         </div>
         
+        <div id="detail" class="container "> 
+
+                <div>
+
+                    </div>
+                    <div class="memo-list">
+                        <div class="memo-title">
+                            <div>
+                                <span class="font-dart-gray"> MEMO </span>
+                                <span class="font-light-gray">MAY.03.19</span>
+                            </div>
+                            <div class="font-light-gray text-right"> 수정하기</div>
+                        </div>
+                        <div class="memo-description">
+                            <p> 피아노 천재 / 귀여움 </p>
+                            <p> 너와 함께 -------------------..........</p>
+            
+                        </div>
+                    </div>
+                    <div>
+                        <div class='class-tab'> 
+                            <div class="active"> 유효이용권 </div>
+                            <hr >
+                            <div> 만료이용권 </div>
+                        </div>
+                        <ul>
+                            <li class="class-detail">
+                                <div>1:1 개인레슨 </div>
+                                <div>
+                                    <span>유효기간</span>
+                                    <span>2019.03.01~2019.12.12</span>
+                                </div>
+                                <div>
+                                    <span>잔여횟수</span>
+                                    <span>50회 중 13회</span>
+                                </div>
+                                <div>
+                                    <span>레슨예약</span>
+                                    <span>2회</span>
+                                </div>
+                            </li>
+                            <li class="class-detail">
+                                    <div>리포머 수업</div>
+                                    <div>
+                                        <span>유효기간</span>
+                                        <span>2019.03.01~2019.12.12</span>
+                                    </div>
+                                    <div>
+                                        <span>잔여횟수</span>
+                                        <span>50회 중 13회</span>
+                                    </div>
+                                    <div>
+                                        <span>레슨예약</span>
+                                        <span>2회</span>
+                                    </div>
+                                </li>
+                            <li class="class-detail">
+                                <div>1:1 개인레슨 </div>
+                                <div>
+                                    <span>유효기간</span>
+                                    <span>2019.03.01~2019.12.12</span>
+                                </div>
+                                <div>
+                                    <span>잔여횟수</span>
+                                    <span>50회 중 13회</span>
+                                </div>
+                                <div>
+                                    <span>레슨예약</span>
+                                    <span>2회</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+        </div>
+        
+        <div id="reservation">
+
+        </div>
+
+        <div id="reservationConfirm">
+
+        </div>
     </section>
     
     <!-- Header -->

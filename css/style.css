@@ -177,7 +177,7 @@ h3{
   
 .search-form .search-form-input {
 height: auto;
-width: 500px;
+width: 80%;
 margin: 0 0 .5rem 0;
 padding: .6rem 0 .4rem 0;
 padding-left: 12px;
@@ -202,7 +202,7 @@ background-color: transparent;
 }
 
 .search-button{
-position: absolute;
+/* position: absolute; */
 padding-bottom: 5px;
 background: transparent;
 outline: none;
@@ -308,4 +308,22 @@ line-height: 1.5;
     font-size:14px;
     background:gray;
     color:white;
+}
+
+.bottom-menu-desc {
+    font-size: 14px;
+    padding: 20px 40px; 
+    color: #000;
+}
+
+.botton-menu-input {
+    padding: 10px 40px; 
+}
+
+.botton-menu-input button {
+    background: #000;
+    color: #fff;
+    padding: 4px 20px;
+    font-size: 16px;
+    border-radius: 7px;
 }

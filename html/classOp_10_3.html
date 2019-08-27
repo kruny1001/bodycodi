@@ -114,27 +114,45 @@
                         <div> 김가은(31세)) </div>
                         <div> 출 </div>
                         <div> 99 </div>
-                        <div> <button class="btn">삭제</button> </div>
-                        <div> <button class="btn">결석처리</button> </div>
-                        <div> <button class="btn">출석처리</button> </div>
+                        <div> <button class="btn"
+                            onclick="openTargetDialog('delete', {userName: '양하은', crntCount: 40})" 
+                            >삭제</button> </div>
+                        <div> <button class="btn"
+                            onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
+                            >결석처리</button> </div>
+                        <div> <button class="btn"
+                            onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
+                            >출석처리</button> </div>
                     </li>
                     <li class="user-detail">
                         <div> <img class="user-img" src="" /> </div>
                         <div> 김가은(31세)) </div>
                         <div> 예 </div>
                         <div> 99</div>
-                        <div> <button class="btn">삭제</button> </div>
-                        <div> <button class="btn">결석처리</button> </div>
-                        <div> <button class="btn">출석처리</button> </div>
+                        <div> <button class="btn"
+                            onclick="openTargetDialog('cancel', {userName: '양하은', crntCount: 40})" 
+                            >예약취소</button> </div>
+                        <div> <button class="btn"
+                            onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
+                            >결석처리</button> </div>
+                        <div> <button class="btn"
+                            onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
+                            >출석처리</button> </div>
                     </li>
                     <li class="user-detail">
                         <div> <img class="user-img" src="" /> </div>
                         <div> 김가은(31세)) </div>
                         <div> 결 </div>
                         <div> 99 </div>
-                        <div> <button class="btn">삭제</button> </div>
-                        <div> <button class="btn">결석처리</button> </div>
-                        <div> <button class="btn">출석처리</button> </div>
+                        <div> <button class="btn"
+                            onclick="openTargetDialog('delete', {userName: '양하은', crntCount: 40})" 
+                            >삭제</button> </div>
+                        <div> <button class="btn"
+                            onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
+                            >결석처리</button> </div>
+                        <div> <button class="btn"
+                            onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
+                            >출석처리</button> </div>
                     </li>
                 </ul>
             </div>
@@ -276,7 +294,20 @@
     <div style="border-top: 2px solid #d8d8d8; text-align: center; padding-bottom:25px;  width: 100%;     z-index: 100;
         left: 0; bottom: 0; position: fixed; background-color: #fff;">
         <div class="bottom-menu">
-            수업완료하기 
+            <span>수업완료하기 </span> <span> <i class="fa fa-angle-up" aria-hidden="true" style="font-weight: bold;"></i> </span>
+            <i class="fa fa-angle-down" aria-hidden="true" style="font-weight: bold;"></i> </span>
+            
+        </div>
+        <div>
+            <section class="bottom-menu-desc">
+                <div> 수업에 참여한 총 회원수를 입력하세요. </div>  
+                <div> 총 회원수는 센터의 정책에 따라 정산에 반영됩니다. </div>  
+            </section>
+            
+            <div class="botton-menu-input"> 
+                <input id="numMember" value=22 type=number> 
+                <button class="ui-button" onClick="openTargetDialog('errorNumMember', {})">수업완료</button> 
+            </div>
         </div>
         <div>
                 <img class="footer-icon" src="/img/layout/footer/icon_SCHEDULE.jpg" alt="BODYCODI" onclick="javascript:location.href='/scheduleView/scheduleList/'">

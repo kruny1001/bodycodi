@@ -25,9 +25,33 @@ function openTargetDialog(type, info){
             fillDialog({type, title, desc, crntCount})
             break;
         }
+
+        case "delete": {
+            let title = "스케줄삭제"
+            let desc = `스케줄삭제시 ${info.userName} 회원님 1:1PT 남은 횟수가 1회 복구 됩니다.`
+            let crntCount = info.crntCount
+            fillDialog({type, title, desc, crntCount})
+            break;
+        }
+
         case "confirm": {
             let desc = `출석처리시 ${info.userName} 회원님 1:1PT 남은 횟수가 1회 차감 됩니다.`
+            break;
         }
+        case "errorNumMember": {
+            // let title = "스케줄삭제"
+            // let desc = `참여한 총 인원의 숫자를 입력햐셔야 합니다.`
+            // let crntCount = info.crntCount
+            let numMember = dialogTemplate.querySelector('#numMember').textContent | null
+            if(numMember){
+                let desc = `스케줄삭제시 ${info.userName} 회원님 1:1PT 남은 횟수가 1회 복구 됩니다.`
+                // let crntCount = info.crntCount
+                fillDialog({type, desc})
+            }
+            else
+                openDialog('#class-complete','#dialogConfirmTemplate')
+        }
+        
         default:
     }
 }
@@ -61,6 +85,21 @@ function fillDialog(content){
         dialogTemplate.querySelector('.beforeCounter').textContent = content.crntCount
         dialogTemplate.querySelector('.afterCounter').textContent = content.crntCount - 1
     }
+    else if(content.type =='delete') {
+        dialogTemplate.querySelector('.title').textContent = content.title
+        dialogTemplate.querySelector('.longDesc').textContent = content.desc
+        dialogTemplate.querySelector('.dialog-detail2').classList.add('display')
+        dialogTemplate.querySelector('.beforeCounter').textContent = content.crntCount
+        dialogTemplate.querySelector('.afterCounter').textContent = content.crntCount + 1
+    }
+    else if(content.type =='errorNumMember') {
+        dialogTemplate.querySelector('.title').classList.remove('display').add('none')
+        dialogTemplate.querySelector('.longDesc').textContent = content.desc
+        dialogTemplate.querySelector('.dialog-detail2').classList.add('none')
+        // dialogTemplate.querySelector('.beforeCounter').textContent = content.crntCount
+        // dialogTemplate.querySelector('.afterCounter').textContent = content.crntCount + 1
+    }
+   
 }
 
 function openDialog(parentId, childId){
@@ -79,6 +118,12 @@ function openDialog(parentId, childId){
     }
     else if(crntType =='attendance') {
         confirmMessage = "출석처리 되었습니다."
+    }
+    else if(crntType =='delete') {
+        confirmMessage = "스케줄이 삭제 되었습니다."
+    }
+    else if(crntType =='errorNumMember') {
+        confirmMessage = "참여한 총 인원의 숫자를 입력하셔야 합니다."
     }
     let confirmTag = dialog1.querySelector('.confirm-message')
     if(confirmTag)
