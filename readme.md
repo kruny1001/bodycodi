@@ -1,2 +1,3 @@
-yarn global add pm2
-yarn 
+npm install -g yarn
+yarn
+yarn start

@@ -13,12 +13,24 @@ router.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/html/classOp_10_2.html'));
 });
 
+router.get('/1',function(req,res){
+  res.sendFile(path.join(__dirname+'/html/classOp_10_1.html'));
+});
+
 router.get('/2',function(req,res){
   res.sendFile(path.join(__dirname+'/html/classOp_10_2.html'));
 });
 
 router.get('/3',function(req,res){
   res.sendFile(path.join(__dirname+'/html/classOp_10_3.html'));
+});
+
+router.get('/4',function(req,res){
+  res.sendFile(path.join(__dirname+'/html/classOp_10_4.html'));
+});
+
+router.get('/5',function(req,res){
+  res.sendFile(path.join(__dirname+'/html/classOp_10_5.html'));
 });
 
 router.get('/sitemap',function(req,res){

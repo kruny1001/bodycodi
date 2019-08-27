@@ -13,20 +13,13 @@
 
 <body>
     <section style="margin-top:60px;">
-        <pre>
-            10.2 스캐줄 개인레슨
-
-            dialogTemplate 
-            dialogConfirmTemplate 
-            container
-
-        </pre>
+        <pre> 10.5 스캐줄 기타추가 </pre>
         <div style="max-width:640px; margin: 0px auto;">
             <a href="/1">10.1 캘린더 </a>
             <a href="/2">10.2 개인레슨 </a>
             <a href="/3">10.3 그룹수업 </a>
             <a href="/4">10.4 회원검색 </a>
-            <a href="/5">10.5 회원검색 </a>
+            <a href="/5">10.5 기타추가 </a>
         </div>
         <!-- Dialog Template -->
         <div id="dialogTemplate" style="margin-top:100px;" class="dialog dialog-1 none shdaow">
@@ -69,48 +62,34 @@
         </div>
         
         <!-- Main Container -->
-        <div id="class-complete" class='container'>
+        <div id="class-complete" class='container group'>
             <div class="detail-info">
-                <div class="detail-time-info">
-                    <span class="time"> 16:00 - 17:00 </span>
-                    <span class="date"> 6월 3일 화요일 </span>
+                <div class="time-info">
+                    <div class="hour">16:00 - 17:00</div>
+                    <div class="date">6월 3일 화요일</div>
                 </div>
-                <hr class="regualr-line">
-                <div>
-                    <div class="name-container"> 
-                        <span class="name">양하은 (31세)</span>
-                        <span class="resv">예약</span>
+                <hr>
+                <div class="title"> title </div>
+                <div class="grid-assets">
+                    <div class="asset-row">
+                        <div>예약중</div>
+                        <div>19명</div>
                     </div>
-                    <div class="properties">
-                        <span class="prop-title">이용권</span>
-                        <span class="prop-value">1:1pt(50분)</span>
+                    <div class="asset-row">
+                        <div>출석</div>
+                        <div>12명</div>
                     </div>
-                    <div class="properties">
-                        <span class="prop-title">유효기간</span>
-                        <span class="prop-value">2019.03.01 - 2019.12.12</span>
+                    <div class="asset-row">
+                        <div>결석</div>
+                        <div>7명</div>
                     </div>
-                    <div class="properties">
-                        <span class="prop-title">잔여횟수</span>
-                        <span class="prop-value">50회중 13회</span>
+                    <div class="asset-row">
+                        <div>정원</div>
+                        <div>22명</div>
                     </div>
                 </div>
-    
-                <div class="profile-img">
-                    <img src="assets/invalid_name.png" alt="">
-                </div>
-    
-                <div class="menu-btn">
-                    <span onclick="openTargetDialog('cancel', {userName: '양하은', crntCount: 40})" 
-                        class="menu-title black"> 예약취소</span>
-                    <span></span>
-                    <span onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
-                        class="menu-title red"> 결석처리</span>
-                    <span onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
-                            class="menu-title blue"> 출석처리</span>
-                </div>
-    
             </div>
-    
+
             <div class="memo-list">
                 <div class="memo-title">
                     <div>
@@ -125,6 +104,41 @@
                     <div>허리부상 환자 - 척추병원 진단서 확인</div>
                 </div>
             </div>
+
+            <div class="user-list">
+                <div> 이용회원 목록 (<span class="userNum">12</span>)</div>
+                <ul>
+                    <li class="user-detail">
+                        <div> 1 </div>
+                        <div> 2 </div>
+                        <div> 3 </div>
+                        <div> 4 </div>
+                        <div> 5 </div>
+                        <div> 6 </div>
+                        <div> 7 </div>
+                    </li>
+                    <li class="user-detail">
+                        <div> 1 </div>
+                        <div> 2 </div>
+                        <div> 3 </div>
+                        <div> 4 </div>
+                        <div> 5 </div>
+                        <div> 6 </div>
+                        <div> 7 </div>
+                    </li>
+                    <li class="user-detail">
+                        <div> 1 </div>
+                        <div> 2 </div>
+                        <div> 3 </div>
+                        <div> 4 </div>
+                        <div> 5 </div>
+                        <div> 6 </div>
+                        <div> 7 </div>
+                    </li>
+                </ul>
+            </div>
+    
+            
     
         </div>
         
@@ -262,11 +276,17 @@
     <!-- Footer -->
     <div style="border-top: 2px solid #d8d8d8; text-align: center; padding-bottom:25px;  width: 100%;     z-index: 100;
         left: 0; bottom: 0; position: fixed; background-color: #fff;">
-        <img class="footer-icon" src="/img/layout/footer/icon_SCHEDULE.jpg" alt="BODYCODI" onclick="javascript:location.href='/scheduleView/scheduleList/'">
-        <img class="footer-icon" src="/img/layout/footer/icon_CLASS_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/classView/'">
-        <img class="footer-icon" src="/img/layout/footer/icon_BODYCAM_off.jpg" alt="BODYCODI" onclick="javascript:location.href='bodyapp://bodycam_main'">
-        <img class="footer-icon" src="/img/layout/footer/icon_FEED_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/feed/'">
-        <img class="footer-icon" src="/img/layout/footer/icon_MY_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/myInfoView/myInfo/'">
+        <div class="bottom-menu">
+            Bottom Menu 
+        </div>
+        <div>
+                <img class="footer-icon" src="/img/layout/footer/icon_SCHEDULE.jpg" alt="BODYCODI" onclick="javascript:location.href='/scheduleView/scheduleList/'">
+                <img class="footer-icon" src="/img/layout/footer/icon_CLASS_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/classView/'">
+                <img class="footer-icon" src="/img/layout/footer/icon_BODYCAM_off.jpg" alt="BODYCODI" onclick="javascript:location.href='bodyapp://bodycam_main'">
+                <img class="footer-icon" src="/img/layout/footer/icon_FEED_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/feed/'">
+                <img class="footer-icon" src="/img/layout/footer/icon_MY_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/myInfoView/myInfo/'">
+        </div>
+        
     </div>
 
     <script src="/reload/reload.js"></script> 

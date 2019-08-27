@@ -14,12 +14,7 @@
 <body>
     <section style="margin-top:60px;">
         <pre>
-            10.2 스캐줄 개인레슨
-
-            dialogTemplate 
-            dialogConfirmTemplate 
-            container
-
+            10.1 스캐줄 캘린더
         </pre>
         <div style="max-width:640px; margin: 0px auto;">
             <a href="/1">10.1 캘린더 </a>
@@ -28,108 +23,18 @@
             <a href="/4">10.4 회원검색 </a>
             <a href="/5">10.5 회원검색 </a>
         </div>
-        <!-- Dialog Template -->
-        <div id="dialogTemplate" style="margin-top:100px;" class="dialog dialog-1 none shdaow">
-            <div class="dialog-detail">
-                <div class="title"></div>
-                <div class="longDesc"></div>
-            </div>
-    
-            <section class="dialog-detail2">
-                <div class="desc">
-                    <div> 현재 <span class="beforeCounter"></span>회 </div>
-                    <div> 변경 후 <span class="afterCounter"></span>회 </div>
-                </div>
-            </section>
-            
-            <hr style="margin: 0px auto; width:95%;">
-    
-            <div class="btn-group">
-                <div onclick="closeAllDialog(); openDialog('#class-complete','#dialogConfirmTemplate');" class="btn">확인</div>
-                <hr style="margin: -2px auto; height: 30px;">
-                <div onclick="closeAllDialog();" class="btn">취소</div>
-            </div>
-        </div>
-    
-        <!-- Confirm Dialog Template -->
-        <div id="dialogConfirmTemplate" style="margin-top:100px;" class="dialog dialog-1 none shdaow">
-            <div style="text-align: center; font-size:30px; margin-top:20px;"> 
-                <i class="fa fa-check-circle"></i>
-            </div>
-            
-            <div class="confirm-message" style="line-height: 60px;"></div>
-            
-            <hr style="margin: 0px auto; width:95%;">
-    
-            <div class="btn-group">
-                <div onclick="closeAllDialog()" class="btn">확인</div>
-                <hr style="margin: -2px auto; height: 30px;">
-                <div onclick="closeAllDialog()" class="btn">취소</div>
-            </div>
-        </div>
-        
-        <!-- Main Container -->
-        <div id="class-complete" class='container'>
-            <div class="detail-info">
-                <div class="detail-time-info">
-                    <span class="time"> 16:00 - 17:00 </span>
-                    <span class="date"> 6월 3일 화요일 </span>
-                </div>
-                <hr class="regualr-line">
-                <div>
-                    <div class="name-container"> 
-                        <span class="name">양하은 (31세)</span>
-                        <span class="resv">예약</span>
-                    </div>
-                    <div class="properties">
-                        <span class="prop-title">이용권</span>
-                        <span class="prop-value">1:1pt(50분)</span>
-                    </div>
-                    <div class="properties">
-                        <span class="prop-title">유효기간</span>
-                        <span class="prop-value">2019.03.01 - 2019.12.12</span>
-                    </div>
-                    <div class="properties">
-                        <span class="prop-title">잔여횟수</span>
-                        <span class="prop-value">50회중 13회</span>
-                    </div>
-                </div>
-    
-                <div class="profile-img">
-                    <img src="assets/invalid_name.png" alt="">
-                </div>
-    
-                <div class="menu-btn">
-                    <span onclick="openTargetDialog('cancel', {userName: '양하은', crntCount: 40})" 
-                        class="menu-title black"> 예약취소</span>
-                    <span></span>
-                    <span onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
-                        class="menu-title red"> 결석처리</span>
-                    <span onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
-                            class="menu-title blue"> 출석처리</span>
-                </div>
-    
-            </div>
-    
-            <div class="memo-list">
-                <div class="memo-title">
-                    <div>
-                        <span class="font-dart-gray"> MEMO </span>
-                        <span class="font-light-gray">MAY.03.19</span>
-                    </div>
-                    <div class="font-light-gray text-right"> 수정하기</div>
-                </div>
-                <hr style="margin-top:4px; margin-bottom:4px;">
-                <div class="memo-description">
-                    <div>6월 말 재등록 예정</div>
-                    <div>허리부상 환자 - 척추병원 진단서 확인</div>
-                </div>
-            </div>
-    
-        </div>
-        
+       
     </section>
     
+    <div style="position:fixed; bottom:60px; right:30px;">
+        <button class="shadow" style="display:block; font-size:20px; border:1px solid black; border-radius: 50%; width:40px; height:40px;"> 
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+        </button>
+        <button class="shadow" style="margin-top:10px; font-size:20px; display:block; border:1px solid black; border-radius: 50%; width:40px; height:40px;"> 
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+    </div>
+
     <!-- Header -->
     <div id="temp_title">
         <h1 id="navigationTitle">스케줄</h1>
@@ -258,7 +163,7 @@
         <!-- // Hamburger Menu -->
 
     </div>
-
+    
     <!-- Footer -->
     <div style="border-top: 2px solid #d8d8d8; text-align: center; padding-bottom:25px;  width: 100%;     z-index: 100;
         left: 0; bottom: 0; position: fixed; background-color: #fff;">

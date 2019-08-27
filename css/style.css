@@ -286,4 +286,26 @@ line-height: 1.5;
     display:grid;
     grid-template-columns: 1fr 1.2fr 0.5fr 0.5fr 1fr 1fr 1fr ;
     grid-template-rows: 45px;
+    border-bottom: 1px solid gray;
+    padding: 10px 12px;
+}
+
+
+.user-list .btn{
+    height: 40px;
+    padding: 4px;
+    width: 70px;
+    font-size: 14px;
+    background: lightgray;
+    /* width: 100%; */
+    /* margin: 10px 20px; */
+    margin: 2px auto;
+    display: block;
+}
+
+.bottom-menu {
+    padding: 10px;
+    font-size:14px;
+    background:gray;
+    color:white;
 }
