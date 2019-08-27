@@ -1,0 +1,460 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dev.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="ui-menu">
+        <button>10.5 기타스케줄추가 </button>
+        <button>10.2 스케줄러_개인레슨 </button>
+    </div>
+    
+    <h3> Dialogs 12333 22 1s1</h3>
+    <!-- <div  style="position: relative; max-width: 640px;">
+        <div class="bottomMenu">
+            <div class="title"> 수업완료하기 </div>
+            <p> 수업에 참여한 총 회원수를 입력하세요. </p>
+            <p> 총회원수는 센터의 청책에 따라 정산에 반영됩니다. </p>
+
+            <div style="display:flex;">
+                <input>
+                <div> 수업완료</div>
+            </div>
+        </div>
+    </div> -->
+    <!--  dialog-1 -->
+    <!-- 출석처리 dialog1 -->
+    <!-- 출석처리 dialog1 -->
+    
+    <!-- Dialog Template -->
+    <div id="dialogTemplate" style="margin-top:100px;" class="dialog dialog-1 none shdaow">
+        <div class="dialog-detail">
+            <div class="title"></div>
+            <div class="longDesc"></div>
+        </div>
+
+        <section class="dialog-detail2">
+            <div class="desc">
+                <div> 현재 <span class="beforeCounter"></span>회 </div>
+                <div> 변경 후 <span class="afterCounter"></span>회 </div>
+            </div>
+        </section>
+        
+        <hr style="margin: 0px auto; width:95%;">
+
+        <div class="btn-group">
+            <div onclick="closeAllDialog(); openDialog('#class-complete','#dialogConfirmTemplate');" class="btn">확인</div>
+            <hr style="margin: -2px auto; height: 30px;">
+            <div onclick="closeAllDialog();" class="btn">취소</div>
+        </div>
+    </div>
+
+    <!-- Confirm Dialog Template -->
+    <div id="dialogConfirmTemplate" style="margin-top:100px;" class="dialog dialog-1 none shdaow">
+        <div style="text-align: center; font-size:30px; margin-top:20px;"> 
+            <i class="fa fa-check-circle"></i>
+        </div>
+        
+        <div class="confirm-message" style="line-height: 60px;"></div>
+        
+        <hr style="margin: 0px auto; width:95%;">
+
+        <div class="btn-group">
+            <div onclick="closeAllDialog()" class="btn">확인</div>
+            <hr style="margin: -2px auto; height: 30px;">
+            <div onclick="closeAllDialog()" class="btn">취소</div>
+        </div>
+    </div>
+
+    <!--  -->
+    <div class="container">
+        <hr class="header-bottom-line">
+        <div class="detail-info">
+            <div class="detail-time-info">
+                <span class="time"> 16:00 - 17:00 </span>
+                <span class="date"> 6월 3일 화요일 </span>
+            </div>
+            <hr class="regualr-line">
+            <div>
+                <div class="name-container">
+                    <span class="name">리포머 수업</span>
+                </div>
+                <div class="properties">
+                    <span class="prop-title">예약중</span>
+                    <span class="prop-value">19명</span>
+                </div>
+                <div class="properties">
+                    <span class="prop-title">출석</span>
+                    <span class="prop-value">12명</span>
+                </div>
+                <div class="properties">
+                    <span class="prop-title">결석</span>
+                    <span class="prop-value">7명</span>
+                </div>
+                <div class="properties">
+                    <span class="prop-title">정원</span>
+                    <span class="prop-value">22명</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="memo-list">
+            <div class="memo-title">
+                <div>
+                    <span class="font-dart-gray"> MEMO </span>
+                    <span class="font-light-gray">MAY.03.19</span>
+                </div>
+                <div class="font-light-gray text-right"> 수정하기</div>
+            </div>
+            <hr>
+            <div class="memo-description">
+                <div>6월 말 재등록 예정</div>
+                <div>허리부상 환자 - 척추병원 진단서 확인</div>
+            </div>
+        </div>
+
+        <div class="register-list">
+            <div class="font-light-gray"> 이용회원 목록(12)</div>
+
+            <div class="register-user-info">
+                <div class="register-row">
+                    <img src="">
+                    <div>
+                        <span>김하은 (31세)</span>
+                        <span> 출 </span>
+                        <span> 99 </span>
+                    </div>
+                </div>
+                <div class="register-row">
+                    <div> 삭제 </div>
+                    <div> 결석처리 </div>
+                    <div> 출석처리 </div>
+                </div>
+            </div>
+            <div class="register-user-info">
+                <div class="register-row">
+                    <img src="">
+                    <div>
+                        <span>김하은 (31세)</span>
+                        <span> 출 </span>
+                        <span> 99 </span>
+                    </div>
+                </div>
+                <div class="register-row">
+                    <div> 삭제 </div>
+                    <div> 결석처리 </div>
+                    <div> 출석처리 </div>
+                </div>
+            </div>
+            <div class="register-user-info">
+                <div class="register-row">
+                    <img src="">
+                    <div>
+                        <span>김하은 (31세)</span>
+                        <span> 출 </span>
+                        <span> 99 </span>
+                    </div>
+                </div>
+                <div class="register-row">
+                    <div> 삭제 </div>
+                    <div> 결석처리 </div>
+                    <div> 출석처리 </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--  10. 회원검색-검색결과 -->
+    <div class="container">
+        <div style="padding:20px;">
+            <div class="card-body">
+                <div class="search-form active-white ml-auto my-0">
+                    <form class="form-inline">
+                    <input class="search-form-input text-white" type="search" placeholder="예약할 회원의 이름을 검색하세요" aria-label="Search">
+                    <span class="search-button search-button-left" type="submit">
+                        <i class="fa fa-search search-text" aria-hidden="true"></i>
+                    </span>
+                    </form>
+                </div>
+            </div>
+            <ul class="found-user">
+                <li class="profile-list">
+                    <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                    <div class="name"> 강하은 </div>
+                    <div class="name"> (31세)</div>
+                    <div class="phone"> 010-1000-1004</div>
+                </li>
+            </ul>
+
+            <div> 
+                <span>개인레슨 담당회원 </span>
+                <span>(12)</span>
+            </div>
+            <ul>
+                <li class="profile-list">
+                    <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                    <div class="name"> 강하은 </div>
+                    <div class="name"> (31세)</div>
+                    <div class="phone"> 010-1000-1004</div>
+                    
+                </li>
+                <li class="profile-list">
+                    <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                    <div class="name"> 강하은 </div>
+                    <div class="name"> (31세)</div>
+                    <div class="phone"> 010-1000-1004</div>
+                </li>
+                <li class="profile-list">
+                    <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                    <div class="name"> 강하은 </div>
+                    <div class="name"> (31세)</div>
+                    <div class="phone"> 010-1000-1004</div>
+                </li>
+
+                <li class="profile-list">
+                    <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                    <div class="name"> 강하은 </div>
+                    <div class="name"> (31세)</div>
+                    <div class="phone"> 010-1000-1004</div>
+                </li>
+                <li class="profile-list">
+                    <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
+                    <div class="name"> 강하은 </div>
+                    <div class="name"> (31세)</div>
+                    <div class="phone"> 010-1000-1004</div>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+
+    <!-- 11. 회원검색 회원상세페이지 유효이용권목록 -->
+    <div class="container">
+        <div>
+
+        </div>
+        <div class="memo-list">
+            <div class="memo-title">
+                <div>
+                    <span class="font-dart-gray"> MEMO </span>
+                    <span class="font-light-gray">MAY.03.19</span>
+                </div>
+                <div class="font-light-gray text-right"> 수정하기</div>
+            </div>
+            <div class="memo-description">
+                <p> 피아노 천재 / 귀여움 </p>
+                <p> 너와 함께 -------------------..........</p>
+
+            </div>
+        </div>
+        <div>
+            <div class='class-tab'> 
+                <div class="active"> 유효이용권 </div>
+                <hr >
+                <div> 만료이용권 </div>
+            </div>
+            <ul>
+                <li class="class-detail">
+                    <div>1:1 개인레슨 </div>
+                    <div>
+                        <span>유효기간</span>
+                        <span>2019.03.01~2019.12.12</span>
+                    </div>
+                    <div>
+                        <span>잔여횟수</span>
+                        <span>50회 중 13회</span>
+                    </div>
+                    <div>
+                        <span>레슨예약</span>
+                        <span>2회</span>
+                    </div>
+                </li>
+                <li class="class-detail">
+                        <div>리포머 수업</div>
+                        <div>
+                            <span>유효기간</span>
+                            <span>2019.03.01~2019.12.12</span>
+                        </div>
+                        <div>
+                            <span>잔여횟수</span>
+                            <span>50회 중 13회</span>
+                        </div>
+                        <div>
+                            <span>레슨예약</span>
+                            <span>2회</span>
+                        </div>
+                    </li>
+                <li class="class-detail">
+                    <div>1:1 개인레슨 </div>
+                    <div>
+                        <span>유효기간</span>
+                        <span>2019.03.01~2019.12.12</span>
+                    </div>
+                    <div>
+                        <span>잔여횟수</span>
+                        <span>50회 중 13회</span>
+                    </div>
+                    <div>
+                        <span>레슨예약</span>
+                        <span>2회</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br><br><br><br>
+
+
+    <!-- Header -->
+    <div id="temp_title">
+        <h1 id="navigationTitle">스케줄</h1>
+
+        <a href="#" class="hamburger">메뉴</a>
+
+        <!-- Hamburger Menu -->
+        <div class="article" style="display: none; left: -100%;">
+            <!-- Profile -->
+            <div class="profile">
+                <div style="display: flex; float: left; height: 100px; width: 37%;">
+                    <p class="pic">
+                        <img src="" alt="" onerror="this.onerror=null;this.src='';">
+                    </p>
+                </div>
+
+                <div class="info" style="display: block; float: left; height: 110px; width: 60%; margin-left: 3%;">
+                    <div style="display: flex; margin-bottom: 10px;">
+                        <div style="width: 63%; text-align: left;">
+                            <p
+                                style=" padding-bottom: 5px;  text-align: left; margin-top: 16px; font-weight: 500; font-size: 14.7px; letter-spacing: 0.81px;">
+                                <span style="border-bottom: 2px solid #919191;">데브웨이-코치1</span>
+
+                            </p>
+                        </div>
+                        <p style="margin-top: 16px; font-size: 12px;"
+                            onclick="javascript:location.href='/signCoach/signOut/'" ;="">로그아웃</p>
+                    </div>
+                    <div>
+                        <p>090-8808-8821</p>
+                    </div>
+                    <div>
+                        <p>devway1@coach.com</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- // Profile -->
+            <div class="menu">
+                <ul>
+                    <li class="menu-li" onclick="javascript:location.href='/scheduleView/scheduleList/'" ;="">
+
+                        <div class="menu-img-box">
+                            <img src="/img/layout/header/1.png" alt="BODYCODI">
+                        </div>
+                        <div class="menu-txt-box">
+                            <div class="menu-txt-title">스케줄러</div>
+                            <div class="menu-txt-sub">스케줄러 타입의 개인 스케줄View</div>
+                        </div>
+                    </li>
+                    <li class="menu-li" onclick="javascript:location.href='/classView/'">
+
+                        <div class="menu-img-box">
+                            <img src="/img/layout/header/2.png" alt="BODYCODI">
+                        </div>
+                        <div class="menu-txt-box">
+                            <div class="menu-txt-title">수업현황</div>
+                            <div class="menu-txt-sub">날짜별 개인레슨과 그룹수업 담당 스케줄 목록</div>
+                        </div>
+                    </li>
+                    <li class="menu-li" onclick="javascript:location.href='bodyapp://bodycam_main'">
+
+                        <div class="menu-img-box">
+                            <img src="/img/layout/header/3.png" alt="BODYCODI">
+                        </div>
+                        <div class="menu-txt-box">
+                            <div class="menu-txt-title">바디캠</div>
+                            <div class="menu-txt-sub">기준점 분석모드와 자율 편집모드 체형분석</div>
+                        </div>
+                    </li>
+                    <li class="menu-li" onclick="javascript:location.href='/feed/'">
+
+                        <div class="menu-img-box">
+                            <img src="/img/layout/header/4.png" alt="BODYCODI">
+                        </div>
+                        <div class="menu-txt-box">
+                            <div class="menu-txt-title">피드</div>
+                            <div class="menu-txt-sub">회원들과 바디캠 콘텐츠 공유 및 조회</div>
+                        </div>
+                    </li>
+                    <li class="menu-li" onclick="javascript:location.href='/myInfoView/myInfo'">
+
+                        <div class="menu-img-box">
+                            <img src="/img/layout/header/5.png" alt="BODYCODI">
+                        </div>
+                        <div class="menu-txt-box">
+                            <div class="menu-txt-title">내정보</div>
+                            <div class="menu-txt-sub">개인정보 목록 수정 및 알림설정과 센터변경</div>
+                        </div>
+                    </li>
+                    <li class="menu-li" onclick="javascript:location.href='/timeline/'">
+
+                        <div class="menu-img-box">
+                            <img src="/img/layout/header/6.png" alt="BODYCODI">
+                        </div>
+                        <div class="menu-txt-box">
+                            <div class="menu-txt-title">알림</div>
+                            <div class="menu-txt-sub">푸시 알림 메시지 모음(중요 히스토리)</div>
+                        </div>
+                    </li>
+                    <!-- 	<li><a href="/manageMember/memberList" class="menuLink">회원관리</a></li>
+                                <li><a href="/timeline/" class="menuLink">타임라인</a></li> -->
+
+
+
+                </ul>
+            </div>
+            <div class="my_center">
+                <ul>
+
+                    <li><a href="/scheduleView/selectPartner?seqPartner=122&amp;seqPartnerCoach=5881"
+                            class="active"><strong>이룸 기구필라테스</strong></a></li>
+
+
+
+
+                </ul>
+            </div>
+        </div>
+        <div id="alertIcon" onclick="javascript:location.href='/timeline/'"
+            style="width: 7%; position: absolute; right: 30px; top: 14px; bottom: 0;">
+            <img style="width:22px; height:20px;" src="/img/layout/header/6.png" alt="BODYCODI">
+        </div>
+
+        <!-- // Hamburger Menu -->
+
+    </div>
+
+    <!-- Footer -->
+    <div style="border-top: 2px solid #d8d8d8; text-align: center; padding-bottom:25px;  width: 100%;     z-index: 100;
+        left: 0; bottom: 0; position: fixed; background-color: #fff;">
+        <img class="footer-icon" src="/img/layout/footer/icon_SCHEDULE.jpg" alt="BODYCODI" onclick="javascript:location.href='/scheduleView/scheduleList/'">
+        <img class="footer-icon" src="/img/layout/footer/icon_CLASS_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/classView/'">
+        <img class="footer-icon" src="/img/layout/footer/icon_BODYCAM_off.jpg" alt="BODYCODI" onclick="javascript:location.href='bodyapp://bodycam_main'">
+        <img class="footer-icon" src="/img/layout/footer/icon_FEED_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/feed/'">
+        <img class="footer-icon" src="/img/layout/footer/icon_MY_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/myInfoView/myInfo/'">
+    </div>
+
+    <script src="/reload/reload.js"></script> 
+    <script src="js/modal.js"></script> 
+</body>
+
+</html>
