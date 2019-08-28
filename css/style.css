@@ -250,9 +250,12 @@ line-height: 1.5;
 .class-resv-btn{position: absolute; bottom: 10px; right:17px; background: #fff; padding: 5px 15px; border-radius: 4px;}
 
 .time-hour-list {
+    padding:20px;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+.time-hour-list > div > div{ font-weight: bold;margin-bottom:7px;}
+.time-hour-list > div > ul > li{font-size:21px; padding-left:8px; border-left: 1px solid black; margin-bottom:5px;}
 /*  */
 
 .group .detail-info {
@@ -333,3 +336,20 @@ line-height: 1.5;
     font-size: 16px;
     border-radius: 7px;
 }
+
+.resv-class-container{
+    padding: 20px 0px;
+    background:gray;
+}
+.resv-class-detail{
+    margin-top:10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background:#fff;
+    color:#000;
+}
+.policy{color:#000; padding:20px;}
+.resv-class-detail > div {margin-bottom:7px;}
+.resv-time{display:flex;}
+.class-title{ font-size:20px; font-weight: bold; margin-bottom:12px;}
+.resv-button{background:black; color:white; padding: 5px 20px; border-radius: 4px; margin:0 auto; display: block;}

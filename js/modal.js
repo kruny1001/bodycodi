@@ -102,7 +102,7 @@ function fillDialog(content){
    
 }
 
-function openDialog(parentId, childId){
+function openDialog(parentId, childId, callBack){
 
     var cc = document.querySelector(parentId)
     var dialog1 = document.querySelector(childId)
@@ -125,10 +125,15 @@ function openDialog(parentId, childId){
     else if(crntType =='errorNumMember') {
         confirmMessage = "참여한 총 인원의 숫자를 입력하셔야 합니다."
     }
+    else if (crntType == "resv") {
+        confirmMessage = "예약완료 되었습니다."
+    }
     let confirmTag = dialog1.querySelector('.confirm-message')
     if(confirmTag)
         confirmTag.textContent = confirmMessage
     cc.append(dialog1)
+    if(callBack)
+        callBack()
 }
 
 function closeDialog(id, status){
@@ -144,28 +149,49 @@ function loadClasses(classes, type){
     let tags = ''
     list.innerHTML = tags
     classes.forEach(classObj=>{
-        let tag = `<li class="class-detail">
-            <div class="class-title">${classObj.title} </div>
-            <div>
-                <span class="class-prop-title">유효기간</span>
-                <span class="class-prop-value">${classObj.dateRange}</span>
-            </div>
-            <div>
-                <span class="class-prop-title">잔여횟수</span>
-                <span class="class-prop-value">${classObj.totalCount}회 중 ${classObj.count}회</span>
-            </div>
-            <div>
-                <span class="class-prop-title">레슨예약</span>
-                <span class="class-prop-value">${classObj.resvCount}회</span>
-            </div>
-            <button class="class-resv-btn"> 예약하기 </button>
-        </li>`
+        let tag = ''
+        if(type == 'availTicket')
+            tag = `<li class="class-detail">
+                <div class="class-title">${classObj.title} </div>
+                <div>
+                    <span class="class-prop-title">유효기간</span>
+                    <span class="class-prop-value">${classObj.dateRange}</span>
+                </div>
+                <div>
+                    <span class="class-prop-title">잔여횟수</span>
+                    <span class="class-prop-value">${classObj.totalCount}회 중 ${classObj.count}회</span>
+                </div>
+                <div>
+                    <span class="class-prop-title">레슨예약</span>
+                    <span class="class-prop-value">${classObj.resvCount}회</span>
+                </div>
+                <button class="class-resv-btn" onClick="showContainer('reservation'); loadClassResv({})"> 예약하기 </button>
+            </li>`
+        else if(type == 'expiredTicket')
+            tag = `<li class="class-detail">
+                <div class="class-title">${classObj.title} </div>
+                <div>
+                    <span class="class-prop-title">유효기간</span>
+                    <span class="class-prop-value">${classObj.dateRange}</span>
+                </div>
+                <div>
+                    <span class="class-prop-title">잔여횟수</span>
+                    <span class="class-prop-value">${classObj.totalCount}회 중 ${classObj.count}회</span>
+                </div>
+                <div>
+                    <span class="class-prop-title">레슨예약</span>
+                    <span class="class-prop-value">${classObj.resvCount}회</span>
+                </div>
+            </li>`
         tags += tag
     })
     list.innerHTML = tags  
     
 }
 
+function loadClassResv(){
+
+}
 function openTab(id){
     var allContainer = document.querySelectorAll(".tab-list")
     allContainer.forEach(container => {
@@ -201,7 +227,23 @@ function reservationConfirm(classInfo){
     detail.classList.add('display')
 }
 
-userDetail()
+function showContainer(id){
+    hideAllContainers()
+    var detail = document.querySelector(`#${id}`)
+    detail.classList.add('display')
+}
+
+function resvClass(hour){
+    showContainer("reservationConfirm")
+    console.log(hour, ' is selected')
+}
+
+function completeResv(){
+    console.log(1)
+    type = 'resv'
+    openDialog('#reservationConfirm','#dialogConfirmTemplate')
+
+}
 
 var classes = [
     {title: '1:1 개인레슨 1', dateRange: '2019.03.01~2019.12.12', totalCount: 50,count: 13, resvCount: 2,},
@@ -218,3 +260,4 @@ var classes2 = [
     {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
 ]
 loadClasses(classes2, 'expiredTicket')
+// showContainer('reservationConfirm');

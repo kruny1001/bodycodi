@@ -55,14 +55,14 @@
             <hr style="margin: 0px auto; width:95%;">
     
             <div class="btn-group">
-                <div onclick="closeAllDialog()" class="btn">확인</div>
-                <hr style="margin: -2px auto; height: 30px;">
-                <div onclick="closeAllDialog()" class="btn">취소</div>
+                <div onclick="closeAllDialog(); showContainer('user-list')" class="btn" style="width:100%">확인</div>
+                <!-- <hr style="margin: -2px auto; height: 30px;">
+                <div onclick="closeAllDialog()" class="btn">취소</div> -->
             </div>
         </div>
         
         <!-- Main Container -->
-        <div class="container user-list-conatiner">
+        <div id="user-list" class="container user-list-conatiner">
             <div style="padding:20px;">
                 <div class="card-body">
                     <div class="search-form active-white ml-auto my-0">
@@ -74,8 +74,9 @@
                         </form>
                     </div>
                 </div>
+
                 <ul class="found-user">
-                    <li class="profile-list">
+                    <li class="profile-list" onClick="userDetail()">
                         <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
                         <div class="name"> 강하은 </div>
                         <div class="name"> (31세)</div>
@@ -87,34 +88,35 @@
                     <span>개인레슨 담당회원 </span>
                     <span>(12)</span>
                 </div>
+
                 <ul>
-                    <li class="profile-list">
+                    <li class="profile-list" onClick="userDetail()">
                         <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
                         <div class="name"> 강하은 </div>
                         <div class="name"> (31세)</div>
                         <div class="phone"> 010-1000-1004</div>
                         
                     </li>
-                    <li class="profile-list">
+                    <li class="profile-list" onClick="userDetail()">
                         <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
                         <div class="name"> 강하은 </div>
                         <div class="name"> (31세)</div>
                         <div class="phone"> 010-1000-1004</div>
                     </li>
-                    <li class="profile-list">
+                    <li class="profile-list" onClick="userDetail()">
                         <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
                         <div class="name"> 강하은 </div>
                         <div class="name"> (31세)</div>
                         <div class="phone"> 010-1000-1004</div>
                     </li>
     
-                    <li class="profile-list">
+                    <li class="profile-list" onClick="userDetail()">
                         <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
                         <div class="name"> 강하은 </div>
                         <div class="name"> (31세)</div>
                         <div class="phone"> 010-1000-1004</div>
                     </li>
-                    <li class="profile-list">
+                    <li class="profile-list" onClick="userDetail()">
                         <img class="image" src="./assets/invalid_name.png" style="height:45px; width:45px;">
                         <div class="name"> 강하은 </div>
                         <div class="name"> (31세)</div>
@@ -126,7 +128,13 @@
         </div>
         
         <div id="detail" class="container user-list-conatiner none"> 
-            <div></div>
+            <button onClick="showContainer('user-list')"> Back </button>
+            <div class="memo-list">
+                <div> 
+                    <div> 이나우 (<span id="age">31</span>세)</div>
+                    <div class="phone"> 010-1000-1004</div>
+                </div>
+            </div>
             <div class="memo-list">
                 <div class="memo-title">
                     <div>
@@ -152,49 +160,68 @@
         </div>
         
         <div id="reservation" class="container user-list-conatiner none">
-
+            <button onClick="showContainer('detail')"> Back </button>
+            <div> 이나우(31세), 1:1 개인레슨</div>
+            <div> Calendar</div>
+            <div class="time-hour-list">
+                <div class="am">
+                    <div class="title"> 오전 </div>
+                    <ul>
+                        <li onClick="resvClass(4)">4:00</li>
+                        <li onClick="resvClass(5)">5:00</li>
+                        <li onClick="resvClass(6)">6:00</li>
+                        <li onClick="resvClass(7)">7:00</li>
+                        <li onClick="resvClass(8)">8:00</li>
+                        <li onClick="resvClass(9)">9:00</li>
+                        <li onClick="resvClass(10)">10:00</li>
+                        <li onClick="resvClass(11)">11:00</li>
+                    </ul>
+                </div>
+                <div class="pm">
+                    <div class="title"> 오후 </div>
+                    <ul>
+                        <li onClick="resvClass(12)">12:00</li>
+                        <li onClick="resvClass(13)">13:00</li>
+                        <li onClick="resvClass(14)">14:00</li>
+                        <li onClick="resvClass(15)">15:00</li>
+                        <li onClick="resvClass(16)">16:00</li>
+                        <li onClick="resvClass(17)">17:00</li>
+                    </ul>
+                </div>
+                <div class="night">
+                    <div class="title"> 저녁 </div>
+                    <ul>
+                        <li onClick="resvClass(18)">18:00</li>
+                        <li onClick="resvClass(19)">19:00</li>
+                        <li onClick="resvClass(20)">20:00</li>
+                        <li onClick="resvClass(21)">21:00</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div id="reservationConfirm" class="container user-list-conatiner none">
-
-        </div>
-        <div class="time-hour-list user-list-conatiner">
-            <div class="am">
-                <div> 오전 </div>
-                <ul>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                </ul>
-            </div>
-            <div class="pm">
-                <div> 오후 </div>
-                <ul>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                </ul>
-            </div>
-            <div class="night">
-                <div> 저녁 </div>
-                <ul>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                </ul>
+            <button onClick="showContainer('reservation')"> Back </button>
+            <div class="resv-class-container">
+                <div class="resv-class-detail">
+                    <div class="resv-time">
+                        <div class="hour">16:00 - 17:00</div>
+                        <div class="date">2019-06-04</div>
+                    </div>
+                    <div class="class-title">1:1 개인레슨</div> 
+                    <div class="user"> 이나우 (<span id="age">31</span>세)</div>
+                </div>
+                <div class="policy">
+                    <div class="title">취소와 변경정책</div>
+                    <p> 수업 당일 예약 최소나 변경은 수업 시작 전에만 가능합니다. </p>
+                    <div class="title">결석에 대한 정책</div>
+                    <p> 무단 결석이나 취소 가능 기간 내 예약을 취소하지 못한 경우 잔여 횟수가 자동 차감 됩니다. </p>
+                </div>
+                <div> <input type="checkbox"> 위 이용권 예약 정책에 동의합니다. </div>
+                <button class="resv-button" onClick="completeResv()"> 예약완료 </button>
             </div>
         </div>
+        
     </section>
     <div> Zeplin</div>
     <img src="/assets/screen.png">
