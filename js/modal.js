@@ -177,17 +177,19 @@ function openTab(id){
 }
 
 function hideAllContainers(){
-    var allContainer = document.querySelectorAll(".container")
+    var allContainer = document.querySelectorAll(".user-list-conatiner")
     allContainer.forEach(container => {
         container.classList.remove('display')
         container.classList.add('none')
     })
 }
+
 function userDetail(userId){
     hideAllContainers()
     var detail = document.querySelector("#detail")
     detail.classList.add('display')
 }
+
 function reservationDetail(userId, classId){
     hideAllContainers()
     var detail = document.querySelector("#reservation")
