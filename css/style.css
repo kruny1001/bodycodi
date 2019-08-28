@@ -230,23 +230,30 @@ line-height: 1.5;
     margin-bottom:40px;
 }
 
-
-
 .class-detail{
+    position:relative;
     padding: 13px 7px;
     margin-bottom:3px;
     background: #d4d2d2;
     color: #000;
 }
 .class-tab {
+    margin-top:20px;
     display:flex;
+    border-radius: 4px;
+    border: 1.4px solid #d4d2d2;
+
 }
 
 .class-tab div{ min-width:120px; text-align: center; padding: 6px 12px;}
 .class-tab div.active {border-top: 2px solid #000; color:#000;}
 .class-tab hr {padding-top:3px;}
+.class-resv-btn{position: absolute; bottom: 10px; right:17px; background: #fff; padding: 5px 15px; border-radius: 4px;}
 
-
+.time-hour-list {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 /*  */
 
 .group .detail-info {

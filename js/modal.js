@@ -137,3 +137,82 @@ function closeDialog(id, status){
     dialog1.classList.remove("display");
     console.log(status)
 }
+
+function loadClasses(classes, type){
+    
+    let list = document.querySelector(`#${type}`)
+    let tags = ''
+    list.innerHTML = tags
+    classes.forEach(classObj=>{
+        let tag = `<li class="class-detail">
+            <div class="class-title">${classObj.title} </div>
+            <div>
+                <span class="class-prop-title">유효기간</span>
+                <span class="class-prop-value">${classObj.dateRange}</span>
+            </div>
+            <div>
+                <span class="class-prop-title">잔여횟수</span>
+                <span class="class-prop-value">${classObj.totalCount}회 중 ${classObj.count}회</span>
+            </div>
+            <div>
+                <span class="class-prop-title">레슨예약</span>
+                <span class="class-prop-value">${classObj.resvCount}회</span>
+            </div>
+            <button class="class-resv-btn"> 예약하기 </button>
+        </li>`
+        tags += tag
+    })
+    list.innerHTML = tags  
+    
+}
+
+function openTab(id){
+    var allContainer = document.querySelectorAll(".tab-list")
+    allContainer.forEach(container => {
+        container.classList.remove('display')
+        container.classList.add('none')
+    })
+    var detail = document.querySelector(`#${id}`)
+    detail.classList.add('display')
+}
+
+function hideAllContainers(){
+    var allContainer = document.querySelectorAll(".container")
+    allContainer.forEach(container => {
+        container.classList.remove('display')
+        container.classList.add('none')
+    })
+}
+function userDetail(userId){
+    hideAllContainers()
+    var detail = document.querySelector("#detail")
+    detail.classList.add('display')
+}
+function reservationDetail(userId, classId){
+    hideAllContainers()
+    var detail = document.querySelector("#reservation")
+    detail.classList.add('display')
+}
+function reservationConfirm(classInfo){
+    hideAllContainers()
+    var detail = document.querySelector("#reservationConfirm")
+    detail.classList.add('display')
+}
+
+userDetail()
+
+var classes = [
+    {title: '1:1 개인레슨 1', dateRange: '2019.03.01~2019.12.12', totalCount: 50,count: 13, resvCount: 2,},
+    {title: '리포머 수업 1', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+    {title: '1:1 개인레슨 1', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+]
+loadClasses(classes, 'availTicket')
+var classes2 = [
+    {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50,count: 13, resvCount: 2,},
+    {title: '리포머 수업 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+    {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+    {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50,count: 13, resvCount: 2,},
+    {title: '리포머 수업 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+    {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+]
+loadClasses(classes2, 'expiredTicket')

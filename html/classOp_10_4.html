@@ -125,90 +125,79 @@
             </div>
         </div>
         
-        <div id="detail" class="container "> 
-
-                <div>
-
-                    </div>
-                    <div class="memo-list">
-                        <div class="memo-title">
-                            <div>
-                                <span class="font-dart-gray"> MEMO </span>
-                                <span class="font-light-gray">MAY.03.19</span>
-                            </div>
-                            <div class="font-light-gray text-right"> 수정하기</div>
-                        </div>
-                        <div class="memo-description">
-                            <p> 피아노 천재 / 귀여움 </p>
-                            <p> 너와 함께 -------------------..........</p>
-            
-                        </div>
-                    </div>
+        <div id="detail" class="container none"> 
+            <div></div>
+            <div class="memo-list">
+                <div class="memo-title">
                     <div>
-                        <div class='class-tab'> 
-                            <div class="active"> 유효이용권 </div>
-                            <hr >
-                            <div> 만료이용권 </div>
-                        </div>
-                        <ul>
-                            <li class="class-detail">
-                                <div>1:1 개인레슨 </div>
-                                <div>
-                                    <span>유효기간</span>
-                                    <span>2019.03.01~2019.12.12</span>
-                                </div>
-                                <div>
-                                    <span>잔여횟수</span>
-                                    <span>50회 중 13회</span>
-                                </div>
-                                <div>
-                                    <span>레슨예약</span>
-                                    <span>2회</span>
-                                </div>
-                            </li>
-                            <li class="class-detail">
-                                    <div>리포머 수업</div>
-                                    <div>
-                                        <span>유효기간</span>
-                                        <span>2019.03.01~2019.12.12</span>
-                                    </div>
-                                    <div>
-                                        <span>잔여횟수</span>
-                                        <span>50회 중 13회</span>
-                                    </div>
-                                    <div>
-                                        <span>레슨예약</span>
-                                        <span>2회</span>
-                                    </div>
-                                </li>
-                            <li class="class-detail">
-                                <div>1:1 개인레슨 </div>
-                                <div>
-                                    <span>유효기간</span>
-                                    <span>2019.03.01~2019.12.12</span>
-                                </div>
-                                <div>
-                                    <span>잔여횟수</span>
-                                    <span>50회 중 13회</span>
-                                </div>
-                                <div>
-                                    <span>레슨예약</span>
-                                    <span>2회</span>
-                                </div>
-                            </li>
-                        </ul>
+                        <span class="font-dart-gray"> MEMO </span>
+                        <span class="font-light-gray">MAY.03.19</span>
                     </div>
+                    <div class="font-light-gray text-right"> 수정하기</div>
+                </div>
+                <div class="memo-description">
+                    <p> 피아노 천재 / 귀여움 </p>
+                    <p> 너와 함께 -------------------..........</p>
+                </div>
+            </div>
+            <div>
+                <div class='class-tab'> 
+                    <div class="active" onClick="openTab('availTicket')"> 유효이용권 </div>
+                    <hr >
+                    <div onClick="openTab('expiredTicket')"> 만료이용권 </div>
+                </div>
+                <ul id="availTicket" class="tab-list display"></ul>
+                <ul id="expiredTicket" class="tab-list none"></ul>
+            </div>
         </div>
         
-        <div id="reservation">
+        <div id="reservation" class="container none">
 
         </div>
 
-        <div id="reservationConfirm">
+        <div id="reservationConfirm" class="container none">
 
+        </div>
+        <div class="time-hour-list">
+            <div class="am">
+                <div> 오전 </div>
+                <ul>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                </ul>
+            </div>
+            <div class="pm">
+                <div> 오후 </div>
+                <ul>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                </ul>
+            </div>
+            <div class="night">
+                <div> 저녁 </div>
+                <ul>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                </ul>
+            </div>
         </div>
     </section>
-    
+    <div> Zeplin</div>
+    <img src="/assets/screen.png">
     <!-- Header -->
     <div id="temp_title">
         <h1 id="navigationTitle">스케줄</h1>
