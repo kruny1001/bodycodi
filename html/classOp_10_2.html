@@ -12,17 +12,10 @@
 </head>
 
 <body>
+
     <section style="margin-top:60px;">
-        <pre>
-            10.2 스캐줄 개인레슨
-
-            dialogTemplate 
-            dialogConfirmTemplate 
-            container
-
-        </pre>
-        
-        <div style="max-width:640px; margin: 0px auto;">
+        <h3 class="text-md">10.2 스캐줄 개인레슨</h3>
+        <div class="temp-menu" style="margin-bottom:10px; max-width:640px; margin: 0px auto;">
             <a href="/1">10.1 캘린더 </a>
             <a href="/2">10.2 개인레슨 </a>
             <a href="/3">10.3 그룹수업 </a>
@@ -74,27 +67,30 @@
         <div id="class-complete" class='container'>
             <div class="detail-info">
                 <div class="detail-time-info">
-                    <span class="time"> 16:00 - 17:00 </span>
-                    <span class="date"> 6월 3일 화요일 </span>
+                    <span class="time text-lg bold"> 16:00 - 17:00 </span>
+                    <span class="date text-sm"> 6월 3일 화요일 </span>
                 </div>
                 <hr class="regualr-line">
-                <div>
+                <div class="detail-user-info">
                     <div class="name-container"> 
                         <span class="name">양하은 (31세)</span>
                         <span class="resv">예약</span>
                     </div>
-                    <div class="properties">
-                        <span class="prop-title">이용권</span>
-                        <span class="prop-value">1:1pt(50분)</span>
-                    </div>
-                    <div class="properties">
-                        <span class="prop-title">유효기간</span>
-                        <span class="prop-value">2019.03.01 - 2019.12.12</span>
-                    </div>
-                    <div class="properties">
-                        <span class="prop-title">잔여횟수</span>
-                        <span class="prop-value">50회중 13회</span>
-                    </div>
+                    <section class="property-list">
+                        <div class="properties">
+                            <span class="prop-title bold">이용권</span>
+                            <span class="prop-value">1:1pt(50분)</span>
+                        </div>
+                        <div class="properties">
+                            <span class="prop-title bold">유효기간</span>
+                            <span class="prop-value">2019.03.01 - 2019.12.12</span>
+                        </div>
+                        <div class="properties">
+                            <span class="prop-title bold">잔여횟수</span>
+                            <span class="prop-value">50회중 13회</span>
+                        </div>
+                    </section>
+                    
                 </div>
     
                 <div class="profile-img">
@@ -104,26 +100,26 @@
                 <div class="menu-btn">
                     <span onclick="openTargetDialog('cancel', {userName: '양하은', crntCount: 40})" 
                         class="menu-title black"> 예약취소</span>
-                    <span></span>
+                    <span style="width:100%;"></span>
                     <span onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
-                        class="menu-title red"> 결석처리</span>
+                        class="menu-title red "> 결석처리</span>
                     <span onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
-                        class="menu-title blue"> 출석처리</span>
+                        class="menu-title blue  margin-left"> 출석처리</span>
                 </div>
             </div>
     
             <div class="memo-list">
                 <div class="memo-title">
-                    <div>
-                        <span class="font-dart-gray"> MEMO </span>
-                        <span class="font-light-gray">MAY.03.19</span>
+                    <div class="memo-title-row">
+                        <span class="bold font-dart-gray"> MEMO </span>
+                        <span class="bold font-light-gray" style="margin-left:12px;">MAY.03.19</span>
                     </div>
-                    <div class="font-light-gray text-right"> 수정하기</div>
+                    <div class="bold ont-light-gray text-right text-xs"> 수정하기</div>
                 </div>
                 <hr style="margin-top:4px; margin-bottom:4px;">
-                <div class="memo-description">
-                    <div>6월 말 재등록 예정</div>
-                    <div>허리부상 환자 - 척추병원 진단서 확인</div>
+                <div class="memo-description text-black bold">
+                    <p>6월 말 재등록 예정</p>
+                    <p>허리부상 환자 - 척추병원 진단서 확인</p>
                 </div>
             </div>
     
@@ -131,6 +127,8 @@
         
     </section>
     
+    <div> Zeplin</div>
+    <img src="/assets/10.2.png">
     <!-- Header -->
     <div id="temp_title">
         <h1 id="navigationTitle">스케줄</h1>
@@ -263,11 +261,17 @@
     <!-- Footer -->
     <div style="border-top: 2px solid #d8d8d8; text-align: center; padding-bottom:25px;  width: 100%;     z-index: 100;
         left: 0; bottom: 0; position: fixed; background-color: #fff;">
-        <img class="footer-icon" src="/img/layout/footer/icon_SCHEDULE.jpg" alt="BODYCODI" onclick="javascript:location.href='/scheduleView/scheduleList/'">
-        <img class="footer-icon" src="/img/layout/footer/icon_CLASS_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/classView/'">
-        <img class="footer-icon" src="/img/layout/footer/icon_BODYCAM_off.jpg" alt="BODYCODI" onclick="javascript:location.href='bodyapp://bodycam_main'">
-        <img class="footer-icon" src="/img/layout/footer/icon_FEED_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/feed/'">
-        <img class="footer-icon" src="/img/layout/footer/icon_MY_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/myInfoView/myInfo/'">
+        <div class="bottom-menu none">
+            Bottom Menu 
+        </div>
+        <div>
+            <img class="footer-icon" src="assets/icon_SCHEDULE.jpg" alt="BODYCODI" onclick="javascript:location.href='/scheduleView/scheduleList/'">
+            <img class="footer-icon" src="/assets/icon_CLASS_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/classView/'">
+            <img class="footer-icon" src="/assets/icon_BODYCAM_off.jpg" alt="BODYCODI" onclick="javascript:location.href='bodyapp://bodycam_main'">
+            <img class="footer-icon" src="/assets/icon_FEED_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/feed/'">
+            <img class="footer-icon" src="/assets/icon_MY_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/myInfoView/myInfo/'">
+        </div>
+        
     </div>
 
     <script src="/reload/reload.js"></script> 

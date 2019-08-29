@@ -12,9 +12,14 @@
 </head>
 
 <body>
+    <style>    
+        @font-face{font-family: 'Nanum Gothic', sans-serif;} 
+        @font-face{font-family: 'Noto Sans KR', sans-serif;} 
+        @font-face{font-family: 'Muli', sans-serif; } 
+    </style>
     <section style="margin-top:60px;">
-        <pre> 10.4 스캐줄 회원검색 </pre>
-        <div style="max-width:640px; margin: 0px auto;">
+        <h3> 10.4 스캐줄 회원검색 </h3>
+        <div class="temp-menu" style="max-width:640px; margin: 0px auto;">
             <a href="/1">10.1 캘린더 </a>
             <a href="/2">10.2 개인레슨 </a>
             <a href="/3">10.3 그룹수업 </a>
@@ -228,9 +233,7 @@
     <!-- Header -->
     <div id="temp_title">
         <h1 id="navigationTitle">스케줄</h1>
-
         <a href="#" class="hamburger">메뉴</a>
-
         <!-- Hamburger Menu -->
         <div class="article" style="display: none; left: -100%;">
             <!-- Profile -->
@@ -353,19 +356,84 @@
         <!-- // Hamburger Menu -->
 
     </div>
+    <script>
 
+            $(function () {  
+                $('#navigationTitle').text('내정보');
+                $('#navigationTitle').attr('class','underline-black');
+            
+        
+            });
+            
+            function connectPartner(seqPartner, seqPartnerCoach) {
+                location.href='/myInfoView/changePartner?seqPartner=' + seqPartner + "&seqPartnerCoach=" + seqPartnerCoach;
+            }
+            
+            function changePw(){
+                location.href='/myInfoView/findPwIntro';
+                return false;
+              /*   $.ajax({
+                    type: 'POST',
+                    contentType: 'application/x-www-form-urlencoded',
+                    url: '/ajax/sign-coach/changePw/',
+                    dataType: 'json',
+                    data: {
+                        password : $('#newPw').val(),
+                        seqMobileMembers : $('#seqMobileMembers').val(),
+                    },
+                    success: function(data){
+                        
+                        if(data.result == 'ok') {
+                            alert("비밀번호가 변경되었습니다..");
+                         
+                        } else {
+                            alert("변경 중 오류가 발생 하였습니다.\n관리자에게 문의하십시오.");
+                        }
+                    },
+                    error: function(data){
+                        alert("변경 중 오류가 발생 하였습니다.\n관리자에게 문의하십시오.");
+                    }
+                }); */
+            }
+            
+            function changeHp(){
+                location.href='/myInfoView/findHpIntro';
+                return false;
+                $.ajax({
+                    type: 'POST',
+                    contentType: 'application/x-www-form-urlencoded',
+                    url: '/ajax/sign-coach/changeHp/',
+                    dataType: 'json',
+                    data: {
+                        mobile : $('#newHp').val(),
+                        seqMobileMembers : $('#seqMobileMembers').val(),
+                    },
+                    success: function(data){
+                        if(data.result == 'ok') {
+                            alert("번호가 변경되었습니다..");
+                         
+                        } else {
+                            alert("변경 중 오류가 발생 하였습니다.\n관리자에게 문의하십시오.");
+                        }
+                    },
+                    error: function(data){
+                        alert("변경 중 오류가 발생 하였습니다.\n관리자에게 문의하십시오.");
+                    }
+                });
+            }
+        </script>
     <!-- Footer -->
     <div style="border-top: 2px solid #d8d8d8; text-align: center; padding-bottom:25px;  width: 100%;     z-index: 100;
         left: 0; bottom: 0; position: fixed; background-color: #fff;">
-        <div class="bottom-menu">
+        <div class="bottom-menu none">
             Bottom Menu 
         </div>
         <div>
-                <img class="footer-icon" src="/img/layout/footer/icon_SCHEDULE.jpg" alt="BODYCODI" onclick="javascript:location.href='/scheduleView/scheduleList/'">
-                <img class="footer-icon" src="/img/layout/footer/icon_CLASS_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/classView/'">
-                <img class="footer-icon" src="/img/layout/footer/icon_BODYCAM_off.jpg" alt="BODYCODI" onclick="javascript:location.href='bodyapp://bodycam_main'">
-                <img class="footer-icon" src="/img/layout/footer/icon_FEED_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/feed/'">
-                <img class="footer-icon" src="/img/layout/footer/icon_MY_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/myInfoView/myInfo/'">
+            <img class="footer-icon" src="assets/icon_SCHEDULE.jpg" alt="BODYCODI" onclick="javascript:location.href='/scheduleView/scheduleList/'">
+            <img class="footer-icon" src="/assets/icon_CLASS_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/classView/'">
+            <img class="footer-icon" src="/assets/icon_BODYCAM_off.jpg" alt="BODYCODI" onclick="javascript:location.href='bodyapp://bodycam_main'">
+            <img class="footer-icon" src="/assets/icon_FEED_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/feed/'">
+            <img class="footer-icon" src="/assets/icon_MY_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/myInfoView/myInfo/'">
         </div>
         
     </div>
