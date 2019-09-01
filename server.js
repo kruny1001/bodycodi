@@ -33,6 +33,22 @@ router.get('/5',function(req,res){
   res.sendFile(path.join(__dirname+'/html/classOp_10_5.html'));
 });
 
+router.get('/6',function(req,res){
+  res.sendFile(path.join(__dirname+'/html/classOp_10_4_search.html'));
+});
+
+router.get('/7',function(req,res){
+  res.sendFile(path.join(__dirname+'/html/classOp_10_4_user.html'));
+});
+
+router.get('/8',function(req,res){
+  res.sendFile(path.join(__dirname+'/html/classOp_10_4_select.html'));
+});
+
+router.get('/9',function(req,res){
+  res.sendFile(path.join(__dirname+'/html/classOp_10_4_confirm.html'));
+});
+
 router.get('/sitemap',function(req,res){
   res.sendFile(path.join(__dirname+'/sitemap.html'));
 });

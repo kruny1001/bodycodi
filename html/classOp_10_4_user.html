@@ -6,21 +6,25 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/layout.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="css/dev.css">
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+    <style>
+
+    </style>
+
     <section style="margin-top:60px;">
-        <h3> 10.5 스캐줄 기타추가 </h3>
+        <h3> 10.4 스캐줄 회원검색 </h3>
         <div class="temp-menu" style="max-width:640px; margin: 0px auto;">
             <a href="/1">10.1 캘린더 </a>
             <a href="/2">10.2 개인레슨 </a>
             <a href="/3">10.3 그룹수업 </a>
             <!-- <a href="/4">10.4 회원검색 </a> -->
-            <a href="/5">10.5 기타추가 </a>
+            <a href="/5">10.5 회원검색 </a>
         </div>
         <div class="temp-menu" style="max-width:640px; margin: 0px auto;">
                 <a href="/6">10.4 회원검색 </a>
@@ -34,160 +38,49 @@
                 <div class="title"></div>
                 <div class="longDesc"></div>
             </div>
-    
+
             <section class="dialog-detail2">
                 <div class="desc">
                     <div> 현재 <span class="beforeCounter"></span>회 </div>
                     <div> 변경 후 <span class="afterCounter"></span>회 </div>
                 </div>
             </section>
-            
+
             <hr style="margin: 0px auto; width:95%;">
-    
+
             <div class="btn-group">
-                <div onclick="closeAllDialog(); openDialog('#class-complete','#dialogConfirmTemplate');" class="btn">확인</div>
+                <div onclick="closeAllDialog(); openDialog('#class-complete','#dialogConfirmTemplate');" class="btn">확인
+                </div>
                 <hr style="margin: -2px auto; height: 30px;">
                 <div onclick="closeAllDialog();" class="btn">취소</div>
             </div>
         </div>
-    
+
         <!-- Confirm Dialog Template -->
         <div id="dialogConfirmTemplate" style="margin-top:100px;" class="dialog dialog-1 none shdaow">
-            <div style="text-align: center; font-size:30px; margin-top:20px;"> 
+            <div style="text-align: center; font-size:30px; margin-top:20px;">
                 <i class="fa fa-check-circle"></i>
             </div>
-            
+
             <div class="confirm-message" style="line-height: 60px;"></div>
-            
+
             <hr style="margin: 0px auto; width:95%;">
-    
+
             <div class="btn-group">
-                <div onclick="closeAllDialog()" class="btn">확인</div>
-                <hr style="margin: -2px auto; height: 30px;">
-                <div onclick="closeAllDialog()" class="btn">취소</div>
+                <div onclick="closeAllDialog(); showContainer('user-list')" class="btn" style="width:100%">확인</div>
+                <!-- <hr style="margin: -2px auto; height: 30px;">
+                <div onclick="closeAllDialog()" class="btn">취소</div> -->
             </div>
         </div>
-        
-        <!-- Main Container -->
-        <div id="schedule" class='container group'>
-            <div class="calendar-date">
-                <button class="date-btn" onClick="toggleCalendar()">
-                    <span id="year">2019</span>년 
-                    <span id="month">06</span>월 
-                    <span id="date">07</span>일
-                </button>
-            </div>
-            <!-- Calendar  -->
-            <div class="calendar-container none"> </div>
 
-            <div style="width: 100%;">
-                <input class="input-desc" type="text">
-            </div>
-            <div> 시작시간과 종료시간을 선택해 주세요.</div>
-            <section style="display: flex;">
-                <div style="background:gray; padding:4px 10px; border-radius: 4px; color:#fff"> 시작 </div>
-                <div style="line-height: 22px;"> 6월 3일 화요일 오전 9시 00분 </div>
-                <div style="width:40%;"></div>
-                <button cklass="clock" style="margin-left:10px;">clock</button>
-                <button class="keyboard" style="margin-left:10px;">keyboard</button>
-            </section>
-
-            <hr style="margin:10px auto;">
-
-            <section id="time-select" class="time-select none">
-
-            </section>
-
-            <section id="time-input" class="time-input">
-                <section>
-                    <div style="width: fit-content; margin: 0px auto; display: flex;">
-                            <div class="time-am-input" onClick="selectAMPM(true)">오전</div>
-                            <div style="margin: 3px 10px; border-right: 1px solid black;"></div>
-                            <div class="time-pm-input" onClick="selectAMPM(false)">오후</hr>
-                        </div>
-                </section>
-                <section>
-                        <div style="width: fit-content; margin: 10px auto; display: flex; text-align:center;" >
-                                <input class="time-hour-input" type="number" name="quantity" min="1" max="12" value="9">
-                                <div style="font-size:40px; margin-left:10px; margin-right:10px;">:</div>
-                                <input class="time-min-input" type="number" name="quantity" min="0" max="60" value="0">
-                            </div>
-                </section>
-                
-<script>
-$(function () {
- $(".time-min-input").keydown(function () {
-   // Save old value.
-   if (!$(this).val() || (parseInt($(this).val()) <= 59 && parseInt($(this).val()) >= 0))
-   $(this).data("old", $(this).val());
- });
- $(".time-min-input").keyup(function () {
-   // Check correct, else revert back to old value.
-   if (!$(this).val() || (parseInt($(this).val()) <= 59 && parseInt($(this).val()) >= 0))
-     ;
-   else
-     $(this).val($(this).data("old"));
- });
- $(".time-hour-input").keydown(function () {
-   // Save old value.
-   if (!$(this).val() || (parseInt($(this).val()) <= 12 && parseInt($(this).val()) >= 1))
-   $(this).data("old", $(this).val());
- });
- $(".time-hour-input").keyup(function () {
-   // Check correct, else revert back to old value.
-   if (!$(this).val() || (parseInt($(this).val()) <= 12 && parseInt($(this).val()) >= 1))
-     ;
-   else
-     $(this).val($(this).data("old"));
- });
- selectAMPM(true) // set am as default
-
-});
-</script>
-            </section>
-            
-            <section style="display: flex;">
-                <div style="background:gray; padding:4px 10px; border-radius: 4px; color:#fff"> 종료 </div>
-                <div style="line-height: 22px;"> 6월 3일 화요일 오전 2시 10분 </div>
-            </section>
-
-            <section class='resv-confirm'>
-                <p> 기타 스케줄이 설정되면</p>
-                <p> 해당 시간에 회원 개인서비스를 예약할 수 없습니다.</p>
-                <div style="width:fit-content; margin: 0px auto;">
-                    <button class="confirmBtn"> 취소 </button>
-                    <button class="confirmBtn" onClick="openDialog('#schedule','#dialogConfirmTemplate')"> 확인 </button>
-                </div>
-            </section>
-
-            <!-- <div class="detail-info">
-                <div class="time-info">
-                    <div class="hour">16:00 - 17:00</div>
-                    <div class="date">6월 3일 화요일</div>
-                    
-                </div>
-                <hr>
-                <div class="title"> title </div>
-                <div class="grid-assets">
-                    <div class="asset-row">
-                        <div>예약중</div>
-                        <div>19명</div>
-                    </div>
-                    <div class="asset-row">
-                        <div>출석</div>
-                        <div>12명</div>
-                    </div>
-                    <div class="asset-row">
-                        <div>결석</div>
-                        <div>7명</div>
-                    </div>
-                    <div class="asset-row">
-                        <div>정원</div>
-                        <div>22명</div>
-                    </div>
+        <div id="detail" class="container user-list-conatiner">
+            <!-- <button onClick="showContainer('user-list')"> Back </button> -->
+            <div class="memo-list">
+                <div>
+                    <div> 이나우 (<span id="age">31</span>세)</div>
+                    <div class="phone"> 010-1000-1004</div>
                 </div>
             </div>
-
             <div class="memo-list">
                 <div class="memo-title">
                     <div>
@@ -196,54 +89,25 @@ $(function () {
                     </div>
                     <div class="font-light-gray text-right"> 수정하기</div>
                 </div>
-                <hr style="margin-top:4px; margin-bottom:4px;">
                 <div class="memo-description">
-                    <div>6월 말 재등록 예정</div>
-                    <div>허리부상 환자 - 척추병원 진단서 확인</div>
+                    <p> 피아노 천재 / 귀여움 </p>
+                    <p> 너와 함께 -------------------..........</p>
                 </div>
             </div>
-
-            <div class="user-list">
-                <div> 이용회원 목록 (<span class="userNum">12</span>)</div>
-                <ul>
-                    <li class="user-detail">
-                        <div> 1 </div>
-                        <div> 2 </div>
-                        <div> 3 </div>
-                        <div> 4 </div>
-                        <div> 5 </div>
-                        <div> 6 </div>
-                        <div> 7 </div>
-                    </li>
-                    <li class="user-detail">
-                        <div> 1 </div>
-                        <div> 2 </div>
-                        <div> 3 </div>
-                        <div> 4 </div>
-                        <div> 5 </div>
-                        <div> 6 </div>
-                        <div> 7 </div>
-                    </li>
-                    <li class="user-detail">
-                        <div> 1 </div>
-                        <div> 2 </div>
-                        <div> 3 </div>
-                        <div> 4 </div>
-                        <div> 5 </div>
-                        <div> 6 </div>
-                        <div> 7 </div>
-                    </li>
-                </ul>
+            <div>
+                <div class='class-tab'>
+                    <div class="active" onClick="openTab('availTicket')"> 유효이용권 </div>
+                    <hr>
+                    <div onClick="openTab('expiredTicket')"> 만료이용권 </div>
+                </div>
+                <ul id="availTicket" class="tab-list display"></ul>
+                <ul id="expiredTicket" class="tab-list none"></ul>
             </div>
-     -->
-            
-    
         </div>
-        
+
     </section>
     <div> Zeplin</div>
-    <img src="/assets/10.5.png">
-    
+    <img src="/assets/screen.png">
     <!-- Header -->
     <div id="temp_title">
         <h1 id="navigationTitle">스케줄</h1>
@@ -356,9 +220,6 @@ $(function () {
                     <li><a href="/scheduleView/selectPartner?seqPartner=122&amp;seqPartnerCoach=5881"
                             class="active"><strong>이룸 기구필라테스</strong></a></li>
 
-
-
-
                 </ul>
             </div>
         </div>
@@ -370,25 +231,94 @@ $(function () {
         <!-- // Hamburger Menu -->
 
     </div>
+    <script>
+        $(function () {
+            $('#navigationTitle').text('내정보');
+            $('#navigationTitle').attr('class', 'underline-black');
 
+
+        });
+
+        function connectPartner(seqPartner, seqPartnerCoach) {
+            location.href = '/myInfoView/changePartner?seqPartner=' + seqPartner + "&seqPartnerCoach=" + seqPartnerCoach;
+        }
+
+        function changePw() {
+            location.href = '/myInfoView/findPwIntro';
+            return false;
+            /*   $.ajax({
+                  type: 'POST',
+                  contentType: 'application/x-www-form-urlencoded',
+                  url: '/ajax/sign-coach/changePw/',
+                  dataType: 'json',
+                  data: {
+                      password : $('#newPw').val(),
+                      seqMobileMembers : $('#seqMobileMembers').val(),
+                  },
+                  success: function(data){
+                      
+                      if(data.result == 'ok') {
+                          alert("비밀번호가 변경되었습니다..");
+                       
+                      } else {
+                          alert("변경 중 오류가 발생 하였습니다.\n관리자에게 문의하십시오.");
+                      }
+                  },
+                  error: function(data){
+                      alert("변경 중 오류가 발생 하였습니다.\n관리자에게 문의하십시오.");
+                  }
+              }); */
+        }
+
+        function changeHp() {
+            location.href = '/myInfoView/findHpIntro';
+            return false;
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/x-www-form-urlencoded',
+                url: '/ajax/sign-coach/changeHp/',
+                dataType: 'json',
+                data: {
+                    mobile: $('#newHp').val(),
+                    seqMobileMembers: $('#seqMobileMembers').val(),
+                },
+                success: function (data) {
+                    if (data.result == 'ok') {
+                        alert("번호가 변경되었습니다..");
+
+                    } else {
+                        alert("변경 중 오류가 발생 하였습니다.\n관리자에게 문의하십시오.");
+                    }
+                },
+                error: function (data) {
+                    alert("변경 중 오류가 발생 하였습니다.\n관리자에게 문의하십시오.");
+                }
+            });
+        }
+    </script>
     <!-- Footer -->
     <div style="border-top: 2px solid #d8d8d8; text-align: center; padding-bottom:25px;  width: 100%;     z-index: 100;
         left: 0; bottom: 0; position: fixed; background-color: #fff;">
         <div class="bottom-menu none">
-            Bottom Menu 
+            Bottom Menu
         </div>
         <div>
-            <img class="footer-icon" src="assets/icon_SCHEDULE.jpg" alt="BODYCODI" onclick="javascript:location.href='/scheduleView/scheduleList/'">
-            <img class="footer-icon" src="/assets/icon_CLASS_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/classView/'">
-            <img class="footer-icon" src="/assets/icon_BODYCAM_off.jpg" alt="BODYCODI" onclick="javascript:location.href='bodyapp://bodycam_main'">
-            <img class="footer-icon" src="/assets/icon_FEED_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/feed/'">
-            <img class="footer-icon" src="/assets/icon_MY_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/myInfoView/myInfo/'">
+            <img class="footer-icon" src="assets/icon_SCHEDULE.jpg" alt="BODYCODI"
+                onclick="javascript:location.href='/scheduleView/scheduleList/'">
+            <img class="footer-icon" src="/assets/icon_CLASS_off.jpg" alt="BODYCODI"
+                onclick="javascript:location.href='/classView/'">
+            <img class="footer-icon" src="/assets/icon_BODYCAM_off.jpg" alt="BODYCODI"
+                onclick="javascript:location.href='bodyapp://bodycam_main'">
+            <img class="footer-icon" src="/assets/icon_FEED_off.jpg" alt="BODYCODI"
+                onclick="javascript:location.href='/feed/'">
+            <img class="footer-icon" src="/assets/icon_MY_off.jpg" alt="BODYCODI"
+                onclick="javascript:location.href='/myInfoView/myInfo/'">
         </div>
-        
+
     </div>
 
-    <script src="/reload/reload.js"></script> 
-    <script src="js/modal.js"></script> 
+    <script src="/reload/reload.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>

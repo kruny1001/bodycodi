@@ -2,6 +2,10 @@ body {
     /* font-family: 'Roboto', sans-serif; */
     /* font-size: 48px; */
     /* letter-spacing: 1px !important;  */
+    
+    @font-face{font-family: 'Nanum Gothic', sans-serif;} 
+    @font-face{font-family: 'Noto Sans KR', sans-serif;} 
+    @font-face{font-family: 'Muli', sans-serif; } 
 }
 .footer-icon{
     margin: 10px 6px;
@@ -368,3 +372,80 @@ line-height: 1.5;
 .resv-time{display:flex;}
 .class-title{ font-size:20px; font-weight: bold; margin-bottom:12px;}
 .resv-button{background:black; color:white; padding: 5px 20px; border-radius: 4px; margin:0 auto; display: block;}
+
+/* 10.5 */
+.input-desc{
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+.calendar-date {
+    margin: 0 auto;
+    display: block;
+}
+.calendar-date .date-btn {
+    margin: 0px auto;
+    display: block;
+    padding: 0px 20px;
+}
+
+.time-select{
+    border:1px solid gray;
+}
+.time-input{
+    padding: 70px;
+    border:1px solid gray;
+}
+.time-am-input{ padding:5px 10px; width:60px; text-align: center; font-size: 1rem;}
+.time-pm-input{ padding:5px 10px; width:60px; text-align: center;font-size: 1rem;}
+.time-hour-input{
+    width:60px;
+    border: 1px solid #fff !important;
+    /* background:gray !important; */
+    text-align: center !important;
+    padding: 5px !important;
+    /* color:white; */
+    font-size: 2rem !important;
+}
+.time-min-input{
+    width:60px;
+    padding: 5px !important;
+    border: 1px solid #fff !important;
+    /* background:gray !important; */
+    font-size: 2rem !important;
+    text-align: center !important;
+    /* color:white; */
+}
+
+.resv-confirm{
+    padding: 20px 10px;
+    color:black;
+    background: lightgray;
+}
+.resv-confirm p{
+    text-align: center;
+    margin-bottom:7px;
+}
+.calendar-container{
+    height:300px; 
+    width: 100%;
+}
+
+.time-am-input.active {
+    font-weight: bold;
+    color:black;
+}
+.time-pm-input.active {
+    font-weight: bold;
+    color:black;
+}
+
+.confirmBtn{
+    margin:0px 7px;
+    margin-top:10px;
+    padding: 4px 10px;
+    background:white;
+    border-radius: 4px;
+
+}

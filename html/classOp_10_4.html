@@ -13,18 +13,24 @@
 
 <body>
     <style>    
-        @font-face{font-family: 'Nanum Gothic', sans-serif;} 
-        @font-face{font-family: 'Noto Sans KR', sans-serif;} 
-        @font-face{font-family: 'Muli', sans-serif; } 
+        
     </style>
+
     <section style="margin-top:60px;">
         <h3> 10.4 스캐줄 회원검색 </h3>
         <div class="temp-menu" style="max-width:640px; margin: 0px auto;">
             <a href="/1">10.1 캘린더 </a>
             <a href="/2">10.2 개인레슨 </a>
             <a href="/3">10.3 그룹수업 </a>
-            <a href="/4">10.4 회원검색 </a>
+            <!-- <a href="/4">10.4 회원검색 </a> -->
             <a href="/5">10.5 회원검색 </a>
+        </div>
+
+        <div class="temp-menu" style="max-width:640px; margin: 0px auto;">
+            <a href="/6">10.4 회원검색 </a>
+            <a href="/7">10.4 이용권리스트 </a>
+            <a href="/8">10.4 시간선택 </a>
+            <a href="/9">10.4 확인창 </a>
         </div>
         <!-- Dialog Template -->
         <div id="dialogTemplate" style="margin-top:100px;" class="dialog dialog-1 none shdaow">
@@ -133,7 +139,7 @@
         </div>
         
         <div id="detail" class="container user-list-conatiner none"> 
-            <button onClick="showContainer('user-list')"> Back </button>
+            <!-- <button onClick="showContainer('user-list')"> Back </button> -->
             <div class="memo-list">
                 <div> 
                     <div> 이나우 (<span id="age">31</span>세)</div>
@@ -165,7 +171,7 @@
         </div>
         
         <div id="reservation" class="container user-list-conatiner none">
-            <button onClick="showContainer('detail')"> Back </button>
+            <!-- <button onClick="showContainer('detail')"> Back </button> -->
             <div> 이나우(31세), 1:1 개인레슨</div>
             <div> Calendar</div>
             <div class="time-hour-list">
@@ -206,7 +212,7 @@
         </div>
 
         <div id="reservationConfirm" class="container user-list-conatiner none">
-            <button onClick="showContainer('reservation')"> Back </button>
+            <!-- <button onClick="showContainer('reservation')"> Back </button> -->
             <div class="resv-class-container">
                 <div class="resv-class-detail">
                     <div class="resv-time">
@@ -357,7 +363,6 @@
 
     </div>
     <script>
-
             $(function () {  
                 $('#navigationTitle').text('내정보');
                 $('#navigationTitle').attr('class','underline-black');
