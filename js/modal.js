@@ -302,3 +302,33 @@ function selectAMPM(value){
 }
 
 var crntType = 'schedule'
+var bottomMenuOpen = false
+
+function toggleBottom(){
+    bottomMenuOpen = ! bottomMenuOpen
+    if(bottomMenuOpen)showBottom()
+    else hideBottom()
+}
+function hideBottom(){
+    let btmMenu =  document.querySelector(".bottom-menu-detail")
+    let up =  document.querySelector(".up")
+    let down =  document.querySelector(".down")
+    down.classList.add('none')
+    down.classList.remove('display')
+    up.classList.add('display')
+    up.classList.remove('none')
+
+    btmMenu.classList.remove('display')
+    btmMenu.classList.add('none')
+}
+function showBottom(){
+    let btmMenu =  document.querySelector(".bottom-menu-detail")
+    let up =  document.querySelector(".up")
+    let down =  document.querySelector(".down")
+    down.classList.add('display')
+    down.classList.remove('none')
+    up.classList.add('none')
+    up.classList.remove('display')
+    btmMenu.classList.remove('none')
+    btmMenu.classList.add('display')
+}

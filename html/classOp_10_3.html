@@ -76,22 +76,22 @@
                     <div class="date">6월 3일 화요일</div>
                 </div>
                 <hr>
-                <div class="title"> title </div>
+                <div style="margin-top:20px; margin-bottom:7px;" class="title"> 리포머 수업 </div>
                 <div class="grid-assets">
                     <div class="asset-row">
-                        <div>예약중</div>
+                        <div style="width:40px">예약중</div>
                         <div>19명</div>
                     </div>
                     <div class="asset-row">
-                        <div>출석</div>
+                        <div style="width:40px">출석</div>
                         <div>12명</div>
                     </div>
                     <div class="asset-row">
-                        <div>결석</div>
+                        <div style="width:40px">결석</div>
                         <div>7명</div>
                     </div>
                     <div class="asset-row">
-                        <div>정원</div>
+                        <div style="width:40px">정원</div>
                         <div>22명</div>
                     </div>
                 </div>
@@ -100,65 +100,78 @@
             <div class="memo-list">
                 <div class="memo-title">
                     <div>
-                        <span class="font-dart-gray"> MEMO </span>
-                        <span class="font-light-gray">MAY.03.19</span>
+                        <span class="font-dart-gray bold"> MEMO </span>
+                        <span class="font-light-gray" style="margin-left:4px;">MAY.03.19</span>
                     </div>
-                    <div class="font-light-gray text-right"> 수정하기</div>
+                    <div class="font-light-gray text-right bold"> 수정하기</div>
                 </div>
                 <hr style="margin-top:4px; margin-bottom:4px;">
                 <div class="memo-description">
-                    <div>6월 말 재등록 예정</div>
-                    <div>허리부상 환자 - 척추병원 진단서 확인</div>
+                    <p>6월 말 재등록 예정</p>
+                    <p>허리부상 환자 - 척추병원 진단서 확인</p>
                 </div>
             </div>
 
             <div class="user-list">
                 <div> 이용회원 목록 (<span class="userNum">12</span>)</div>
+                
                 <ul>
                     <li class="user-detail">
-                        <div> <img class="user-img" src="" /> </div>
-                        <div> 김가은(31세)) </div>
-                        <div> 출 </div>
-                        <div> 99 </div>
-                        <div> <button class="btn"
-                            onclick="openTargetDialog('delete', {userName: '양하은', crntCount: 40})" 
-                            >삭제</button> </div>
-                        <div> <button class="btn"
-                            onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
-                            >결석처리</button> </div>
-                        <div> <button class="btn"
-                            onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
-                            >출석처리</button> </div>
+                        <section style="width:50%; display:flex;justify-content: center; padding: 5px 10px 5px 0px; border-right:0.4px solid #d4d2d2;">
+                            <div> <img class="user-img" src="" /> </div>
+                            <div id="user-name" class="user-name bold"> 김가은(31세) </div>
+                            <div style="margin-left:auto;" id="status"> <div class="circle-value bg-blue bold">출</div> </div>
+                            <div id='num'> <div class="circle-value bg-gray" >99</div>  </div>
+                        </section>
+                        <section style="width:50%; display:flex; justify-content: center; padding: 5px 0px 5px 10px;">
+                            <div style="width:33%;margin: 0px 4px;"> <button class="btn"
+                                onclick="openTargetDialog('delete', {userName: '양하은', crntCount: 40})" 
+                                >삭제</button> </div>
+                            <div style="width:33%; margin: 0px 4px;"> <button class="btn red-font"
+                                onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
+                                >결석처리</button> </div>
+                            <div style="width:33%; margin: 0px 4px;"> <button class="btn"
+                                onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
+                                >출석처리</button> </div>    
+                        </section>
                     </li>
                     <li class="user-detail">
-                        <div> <img class="user-img" src="" /> </div>
-                        <div> 김가은(31세)) </div>
-                        <div> 예 </div>
-                        <div> 99</div>
-                        <div> <button class="btn"
-                            onclick="openTargetDialog('cancel', {userName: '양하은', crntCount: 40})" 
-                            >예약취소</button> </div>
-                        <div> <button class="btn"
-                            onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
-                            >결석처리</button> </div>
-                        <div> <button class="btn"
-                            onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
-                            >출석처리</button> </div>
+                        <section style="width:50%; display:flex;justify-content: center; padding: 5px 10px 5px 0px; border-right:0.4px solid #d4d2d2;">
+                            <div> <img class="user-img" src="" /> </div>
+                            <div id="user-name" class="user-name bold"> 김가은(31세) </div>
+                            <div id="status" style="margin-left:auto;"> <div class="circle-value bg-green bold">예</div> </div>
+                            <div id='num'> <div class="circle-value bg-gray" >99</div>  </div>
+                        </section>
+                        <section style="width:50%; display:flex;justify-content: center;padding: 5px 0px 5px 10px;">
+                            <div style="width:33%;margin: 0px 4px;"> <button class="btn"
+                                onclick="openTargetDialog('cancel', {userName: '양하은', crntCount: 40})" 
+                                >예약취소</button> </div>
+                            <div style="width:33%;margin: 0px 4px;"> <button class="btn red-font"
+                                onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
+                                >결석처리</button> </div>
+                            <div style="width:33%;margin: 0px 4px;"> <button class="btn font-blue"
+                                onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
+                                >출석처리</button> </div>
+                        </section>
                     </li>
                     <li class="user-detail">
-                        <div> <img class="user-img" src="" /> </div>
-                        <div> 김가은(31세)) </div>
-                        <div> 결 </div>
-                        <div> 99 </div>
-                        <div> <button class="btn"
-                            onclick="openTargetDialog('delete', {userName: '양하은', crntCount: 40})" 
-                            >삭제</button> </div>
-                        <div> <button class="btn"
-                            onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
-                            >결석처리</button> </div>
-                        <div> <button class="btn"
-                            onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
-                            >출석처리</button> </div>
+                        <section style="width:50%; display:flex;justify-content: center; padding: 5px 10px 5px 0px; border-right:0.4px solid #d4d2d2;">
+                            <div> <img class="user-img" src="" /> </div>
+                            <div id="user-name" class="user-name bold"> 김가은(31세) </div>
+                            <div style="margin-left:auto;" id="status"> <div class="circle-value bg-red bold">결</div> </div>
+                            <div id='num'> <div class="circle-value bg-gray" >99</div>  </div>
+                        </section>
+                        <section style="width:50%; display:flex; justify-content: center; padding: 5px 0px 5px 10px;">
+                            <div style="width:33%;margin: 0px 4px;"> <button class="btn"
+                                onclick="openTargetDialog('delete', {userName: '양하은', crntCount: 40})" 
+                                >삭제</button> </div>
+                            <div style="width:33%; margin: 0px 4px;"> <button class="btn red-font"
+                                onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
+                                >결석처리</button> </div>
+                            <div style="width:33%; margin: 0px 4px;"> <button class="btn"
+                                onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
+                                >출석처리</button> </div>
+                        </section>
                     </li>
                 </ul>
             </div>
@@ -300,23 +313,25 @@
     <!-- Footer -->
     <div style="border-top: 2px solid #d8d8d8; text-align: center; padding-bottom:25px;  width: 100%;     z-index: 100;
         left: 0; bottom: 0; position: fixed; background-color: #fff;">
-        <div class="bottom-menu">
-            <span>수업완료하기 </span> <span> <i class="fa fa-angle-up" aria-hidden="true" style="font-weight: bold;"></i> </span>
-            <i class="fa fa-angle-down" aria-hidden="true" style="font-weight: bold;"></i> </span>
-            
-        </div>
-        <div>
+        <section>
+            <div class="bottom-menu" onClick="toggleBottom()">
+                <span>수업완료하기 </span> 
+                <span class="down none">  <i class="fa fa-angle-down" aria-hidden="true" style="font-weight: bold;"></i> </span>
+                <span class="up "> <i class="fa fa-angle-up" aria-hidden="true" style="font-weight: bold;"></i> </span>
+            </div>            
+        </section>
+        <div class="bottom-menu-detail none">
             <section class="bottom-menu-desc">
-                <div> 수업에 참여한 총 회원수를 입력하세요. </div>  
-                <div> 총 회원수는 센터의 정책에 따라 정산에 반영됩니다. </div>  
+                <p> 수업에 참여한 총 회원수를 입력하세요. </p>  
+                <p> 총 회원수는 센터의 정책에 따라 정산에 반영됩니다. </p>  
             </section>
             
             <div class="botton-menu-input"> 
-                <input id="numMember" value=22 type=number> 
-                <button class="ui-button" onClick="openTargetDialog('errorNumMember', {})">수업완료</button> 
+                <input id="numMember" value=22 type=number style="margin-right:4px; text-align:center;line-height: 12px; padding:0px; width:80px; height: 28px;"> 
+                <button class="ui-button" style="margin-left:4px; " onClick="openTargetDialog('errorNumMember', {})">수업완료</button> 
             </div>
         </div>
-        <div>
+        <div style="margin-top:10px;">
             <img class="footer-icon" src="assets/icon_SCHEDULE.jpg" alt="BODYCODI" onclick="javascript:location.href='/scheduleView/scheduleList/'">
             <img class="footer-icon" src="/assets/icon_CLASS_off.jpg" alt="BODYCODI" onclick="javascript:location.href='/classView/'">
             <img class="footer-icon" src="/assets/icon_BODYCAM_off.jpg" alt="BODYCODI" onclick="javascript:location.href='bodyapp://bodycam_main'">
