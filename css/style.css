@@ -67,7 +67,7 @@ h3{
 .detail-info .name{
     margin: 0;
     font-size: 17px !important;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 14px; 
     color:#696c74
 }
@@ -84,13 +84,15 @@ h3{
     margin-top:12px;
 }
 .detail-info .properties { display:flex; margin-top:6px;}
-.detail-info .properties .prop-title { color: #000;  width:60px;}
+.detail-info .properties .prop-title { color:#696c74;  font-weight: bold; width:60px;}
 .detail-info .properties .prop-value { margin-left:12px;}
 .detail-info .profile-img {position: absolute; right:12px; top: 60px;}
 .detail-info .profile-img img {width:45px; height:45px;}
 
-.detail-info .menu-btn {display:flex; font-size:10px; padding-top: 35px;}
-.detail-info .menu-btn span {width:25%;}
+.detail-info .menu-btn {display:flex; 
+    justify-content: space-between;
+    font-size:10px; padding-top: 35px;}
+.detail-info .menu-btn span {}
 
 .dialog { 
 
@@ -128,9 +130,9 @@ h3{
     font-size: 14px;
     font-weight: 600;
     border-left: 2px solid;
-    padding-left: 7px;
+    padding-left: 12px;
     letter-spacing: 1.82px;
-    width: 33.3%;
+    
 }
 .memo-title {
     display:flex;
