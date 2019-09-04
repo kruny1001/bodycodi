@@ -291,13 +291,14 @@ line-height: 1.5;
     border-radius: 5px;
 }
 .circle-value {
-    margin:7px;
-    font-size:1rem; 
+    margin-top:10px;
+    margin-left:2px;
+    font-size:14px; 
     color:white;border-radius: 50%; text-align: center;
     padding:2px;
-    width: 30px;
+    width: 25px;
     /* font-weight: bold; */
-    height: 30px; line-height: 25px;
+    height: 25px; line-height: 20px;
 }
 .bg-gray{background:gray;}
 .bg-red{background:#f22a5e;}
@@ -305,8 +306,8 @@ line-height: 1.5;
 .bg-blue{background:#1b7cdd;}
 
 .user-detail .user-name{
-    letter-spacing: 0.1em;
-    padding-left:4px; font-size:1.1rem; line-height: 45px; font-weight: bold;
+    /* letter-spacing: 0.06em; */
+    padding-left:4px; font-size:14px; line-height: 45px; font-weight: bold;
 }
 .time-hour-list {
     padding:20px;
@@ -369,17 +370,24 @@ line-height: 1.5;
     border-bottom: 0.7px solid #d4d2d2;
 }
 
-
-.user-list .btn{
-    height: 40px;
+.user-list .left-col{
+    width:50%; display:flex;justify-content: center; padding: 5px 10px 5px 0px; border-right:0.4px solid #d4d2d2;
+}
+.user-list .right-col{
+    width:50%; display:flex; justify-content: center; padding: 5px 0px 5px 10px;
+}
+.user-list .button-cust{
+    border-radius: 4px;
+    /* height: 40px; */
     padding: 4px;
     width: 100%;
+    height:100%;
     font-size: 12px;
     background: #ededed;
-    /* width: 100%; */
     
-    padding: 0px 7px;
-    /* margin: 2px auto; */
+    
+    /* padding: 0px 7px; */
+    margin: 2px auto;
     display: block;
 }
 
