@@ -43,7 +43,9 @@ h3{
     position: relative;
 }
 
-
+.bolder{
+    font-weight: 900;
+}
 .memo-list{
     border: 2px solid #e6e6e6;
     border-radius: 4px;
@@ -202,11 +204,11 @@ h3{
 .register-row {display:flex;}
 
 .profile-list{
-    width:65%; 
+    width:70%; 
     display:flex; border-bottom: 0.7px solid #a5a5a5; padding-bottom:10px; padding-top:10px;}
 .profile-list .image { border-radius: 10px; border: 1.4px solid #d4d2d2; margin-right:4px;}
-.profile-list .name { font-size:16px; line-height:45px; color:#000; padding-left:4px; padding-right:4px;}
-.profile-list .phone { font-size:16px;  line-height:45px; color: #696c74; padding-left:4px; padding-right:4px;}
+.profile-list .name { font-size:14px; line-height:45px; color:#000; padding-left:4px; padding-right:4px;}
+.profile-list .phone { font-size:14px;  line-height:45px; color: #696c74; padding-left:4px; padding-right:4px;}
 
 
 .card-body{}
