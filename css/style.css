@@ -253,16 +253,16 @@ right: 0;
 }
 
 .search-text {
-    color: black;
+    /* color: black; */
 font-size: 1rem;
 font-weight: 400;
 line-height: 1.5;
 }
 
 .active-white input[type=search]:focus:not([readonly]) {
-    border-bottom: 1px solid blue;
-    box-shadow: 0 1px 0 0 blue;
-    color: blue;
+    border-bottom: 1px solid #1b7cdd;
+    box-shadow: 0 1px 0 0 #1b7cdd;
+    /* color: #1b7cdd; */
   }
   
 .found-user {
@@ -272,9 +272,10 @@ line-height: 1.5;
 
 .class-detail{
     position:relative;
-    padding: 13px 7px;
+    padding: 13px 13px;
     margin-bottom:3px;
-    background: #d4d2d2;
+    background:#f2f3f5;
+    /* background: #d4d2d2; */
     color: #000;
 }
 .class-tab {
@@ -290,8 +291,8 @@ line-height: 1.5;
 .class-resv-btn{position: absolute; bottom: 10px; right:17px; background: #fff; padding: 5px 15px; border-radius: 4px;}
 
 .user-img{
-    width:43px;
-    height: 43px;
+    width:40px;
+    height: 40px;
     border: 0.7px solid gray;
     border-radius: 5px;
 }
@@ -312,7 +313,13 @@ line-height: 1.5;
 
 .user-detail .user-name{
     /* letter-spacing: 0.06em; */
-    padding-left:4px; font-size:14px; line-height: 45px; font-weight: bold;
+    padding-left:4px; font-size:12px; 
+    line-height: 45px; font-weight: bold;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .time-hour-list {
     padding:20px;
@@ -519,3 +526,32 @@ line-height: 1.5;
     border-radius: 4px;
 
 }
+
+.profile-name{
+    margin: 0;
+    font-size: 17px !important;
+    font-weight: bold;
+    font-size: 14px;
+    color: #696c74;
+}
+.profile-phone {
+    font-size: 17px !important;
+    line-height: 25px;
+    color: #696c74;
+}
+
+.tab-list {
+    list-style-type: none;
+}
+
+.class-prop-title{
+    font-weight:bold;
+    width: 70px !important; 
+
+}
+.class-prop-row {
+    display:flex;
+    margin-bottom:4px;
+}
+
+.overflowEnable{overflow-y:scroll;     max-height: 80px;}

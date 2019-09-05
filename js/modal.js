@@ -167,43 +167,45 @@ function closeDialog(id, status){
 }
 
 function loadClasses(classes, type){
-    
+    console.log(classes, type)
     let list = document.querySelector(`#${type}`)
+    list.classList.remove('none')
     let tags = ''
+    console.log(list)
     list.innerHTML = tags
     classes.forEach(classObj=>{
         let tag = ''
         if(type == 'availTicket')
             tag = `<li class="class-detail">
                 <div class="class-title">${classObj.title} </div>
-                <div>
-                    <span class="class-prop-title">유효기간</span>
-                    <span class="class-prop-value">${classObj.dateRange}</span>
+                <div class="class-prop-row">
+                    <div class="class-prop-title">유효기간</div>
+                    <div class="class-prop-value">${classObj.dateRange}</div>
                 </div>
-                <div>
-                    <span class="class-prop-title">잔여횟수</span>
-                    <span class="class-prop-value">${classObj.totalCount}회 중 ${classObj.count}회</span>
+                <div class="class-prop-row">
+                    <div class="class-prop-title">잔여횟수</div>
+                    <div class="class-prop-value">${classObj.totalCount}회 중 ${classObj.count}회</div>
                 </div>
-                <div>
-                    <span class="class-prop-title">레슨예약</span>
-                    <span class="class-prop-value">${classObj.resvCount}회</span>
+                <div class="class-prop-row">
+                    <div class="class-prop-title">레슨예약</div>
+                    <div class="class-prop-value">${classObj.resvCount}회</div>
                 </div>
                 <button class="class-resv-btn" onClick="loadClassResv({})"> 예약하기 </button>
             </li>`
         else if(type == 'expiredTicket')
             tag = `<li class="class-detail">
                 <div class="class-title">${classObj.title} </div>
-                <div>
-                    <span class="class-prop-title">유효기간</span>
-                    <span class="class-prop-value">${classObj.dateRange}</span>
+                <div class="class-prop-row">
+                    <div class="class-prop-title">유효기간</div>
+                    <div class="class-prop-value">${classObj.dateRange}</div>
                 </div>
-                <div>
-                    <span class="class-prop-title">잔여횟수</span>
-                    <span class="class-prop-value">${classObj.totalCount}회 중 ${classObj.count}회</span>
+                <div class="class-prop-row">
+                    <div class="class-prop-title">잔여횟수</div>
+                    <div class="class-prop-value">${classObj.totalCount}회 중 ${classObj.count}회</div>
                 </div>
-                <div>
-                    <span class="class-prop-title">레슨예약</span>
-                    <span class="class-prop-value">${classObj.resvCount}회</span>
+                <div class="class-prop-row">
+                    <div class="class-prop-title">레슨예약</div>
+                    <div class="class-prop-value">${classObj.resvCount}회</div>
                 </div>
             </li>`
         tags += tag
@@ -213,7 +215,7 @@ function loadClasses(classes, type){
 }
 
 function loadClassResv(){
-
+    openDialog('#class-complete','#dialogConfirmTemplate', ()=>"예약완료 되었습니다.");
 }
 function openTab(id){
     var allContainer = document.querySelectorAll(".tab-list")
@@ -223,6 +225,30 @@ function openTab(id){
     })
     var detail = document.querySelector(`#${id}`)
     detail.classList.add('display')
+    $(".availTicket").removeClass('active')
+    $(".expiredTicket").removeClass('active')
+    if(id == 'availTicket'){
+        $(".availTicket").addClass('active')
+        var classes = [
+            {title: '1:1 개인레슨 1', dateRange: '2019.03.01~2019.12.12', totalCount: 50,count: 13, resvCount: 2,},
+            {title: '리포머 수업 1', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+            {title: '1:1 개인레슨 1', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+        ]
+        loadClasses(classes, 'availTicket')
+    }
+    else {
+        $(".expiredTicket").addClass('active')
+        var classes2 = [
+            {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50,count: 13, resvCount: 2,},
+            {title: '리포머 수업 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+            {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+            {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50,count: 13, resvCount: 2,},
+            {title: '리포머 수업 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+            {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
+        ]
+        loadClasses(classes2, 'expiredTicket')
+    }
+        
 }
 
 function hideAllContainers(){
@@ -268,22 +294,7 @@ function completeResv(){
 
 }
 
-var classes = [
-    {title: '1:1 개인레슨 1', dateRange: '2019.03.01~2019.12.12', totalCount: 50,count: 13, resvCount: 2,},
-    {title: '리포머 수업 1', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
-    {title: '1:1 개인레슨 1', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
-]
-loadClasses(classes, 'availTicket')
 
-var classes2 = [
-    {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50,count: 13, resvCount: 2,},
-    {title: '리포머 수업 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
-    {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
-    {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50,count: 13, resvCount: 2,},
-    {title: '리포머 수업 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
-    {title: '1:1 개인레슨 2', dateRange: '2019.03.01~2019.12.12', totalCount: 50, count: 13, resvCount: 2,},
-]
-loadClasses(classes2, 'expiredTicket')
 
 var openCalendar = false
 
@@ -318,7 +329,7 @@ function showCalendar(){
 }
 // showContainer('reservationConfirm');
 
-var isAM = ture;
+var isAM = true;
 function selectAMPM(value){
     isAM = value
     let amInput = document.querySelector('.time-am-input')
@@ -408,8 +419,10 @@ function checkValid(){
     var text = $(".input-desc").val()
     var hour = $(".time-hour-input").val()
     var min = $(".time-min-input").val()
+    // 모든값이 잘 들어 왔을때
     if(text !== '' && hour !== '' && min !== '')
         openDialog('#class-complete','#dialogConfirmTemplate', ()=>"스케줄을 추가하였습니다.");
+    // 필수사항 값이 누락되었을 경우
     else
         openDialog('#class-complete','#dialogConfirmTemplate', ()=>"필수사항을 입력하셔야 합니다.");
 }

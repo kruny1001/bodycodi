@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/dev.css">
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/trumbowyg/dist/ui/trumbowyg.min.css">
 </head>
 
 <body>
@@ -67,7 +68,7 @@
             <hr style="margin: 0px auto; width:95%;">
 
             <div class="btn-group">
-                <div onclick="closeAllDialog(); showContainer('user-list')" class="btn" style="width:100%">확인</div>
+                <div onclick="closeAllDialog();" class="btn" style="width:100%">확인</div>
                 <!-- <hr style="margin: -2px auto; height: 30px;">
                 <div onclick="closeAllDialog()" class="btn">취소</div> -->
             </div>
@@ -76,33 +77,42 @@
         <div id="detail" class="container user-list-conatiner">
             <!-- <button onClick="showContainer('user-list')"> Back </button> -->
             <div class="memo-list">
-                <div>
-                    <div> 이나우 (<span id="age">31</span>세)</div>
-                    <div class="phone"> 010-1000-1004</div>
+                <div style="position: relative">
+                    <div class="profile-name"> 이나우 (<span id="age">31</span>세) <span class="birth" style="margin-left:12px; color:#a5a5a5; line-height: 23px; font-size:12px;">1989.07.13</span></div>
+                    <div class="profile-phone"> 010-1000-1004</div>
+                    <img style="position: absolute; width:45px; height:45px; right: 0px; top: 0px;" class="profile-img" src="assets/invalid_name.png" alt="">
+                    
                 </div>
             </div>
+
+            <!-- memo  -->
             <div class="memo-list">
                 <div class="memo-title">
-                    <div>
-                        <span class="font-dart-gray"> MEMO </span>
-                        <span class="font-light-gray">MAY.03.19</span>
+                    <div class="memo-title-row">
+                        <span class="bold font-dart-gray"> MEMO </span>
+                        <span class="bold font-light-gray" style="margin-left:12px;">MAY.03.19</span>
                     </div>
-                    <div class="font-light-gray text-right"> 수정하기</div>
+                    <div id="editBtn" onClick="editMemo()" class="bold ont-light-gray text-right text-xs"> 수정하기</div>
+                    <div id="saveBtn" onClick="saveMemo()" class="bold ont-light-gray text-right text-xs"> 저장하기</div>
                 </div>
-                <div class="memo-description">
-                    <p> 피아노 천재 / 귀여움 </p>
-                    <p> 너와 함께 -------------------..........</p>
-                </div>
+                <hr style="margin-top:4px; margin-bottom:4px;">
+                <div class="memo-description text-black bold overflowEnable"></div>
+                <div id="editor"></div>
             </div>
+
+            <!-- ticket list -->
             <div>
                 <div class='class-tab'>
-                    <div class="active" onClick="openTab('availTicket')"> 유효이용권 </div>
+                    <div class="availTicket active" onClick="openTab('availTicket')"> 유효이용권 </div>
                     <hr>
-                    <div onClick="openTab('expiredTicket')"> 만료이용권 </div>
+                    <div class="expiredTicket" onClick="openTab('expiredTicket')"> 만료이용권 </div>
                 </div>
-                <ul.botton-menu-input id="availTicket" class="tab-list display"></ul.botton-menu-input>
+
+                <ul id="availTicket" class="tab-list display"></ul>
                 <ul id="expiredTicket" class="tab-list none"></ul>
             </div>
+
+
         </div>
 
     </section>
@@ -317,8 +327,15 @@
 
     </div>
 
-    <script src="/reload/reload.js"></script>
-    <script src="js/modal.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/trumbowyg/dist/trumbowyg.min.js"> </script>
+    <script src="/reload/reload.js"></script> 
+    <script src="js/modal.js"></script> 
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script>
+        loadMemoText()
+        openTab('availTicket')
+    </script>
 </body>
 
 </html>
