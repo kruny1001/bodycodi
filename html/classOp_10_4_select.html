@@ -72,40 +72,53 @@
         <!-- Main Container -->
         <div id="reservation" class="container user-list-conatiner">
                 <!-- <button onClick="showContainer('detail')"> Back </button> -->
-                <div> 이나우(31세), 1:1 개인레슨</div>
-                <div> Calendar</div>
+                <div style="background:#f2f3f5; padding:7px 20px; font-weight: bold;">
+                    <div> 이나우(31세), 1:1 개인레슨</div>
+                </div>
+                <div class="calendar-date" style="margin-top:10px;">
+                    <div class="date-btn" style="width:200px; font-weight: bold;">
+                        <span class="down">  <i class="blue fa fa-angle-left" aria-hidden="true" style="font-weight: bold;"></i> </span>
+                        <span id="year">2019</span>년 
+                        <span id="month">06</span>월 
+                        <span id="date">07</span>일
+                        <span class="up">  <i class="blue fa fa-angle-right" aria-hidden="true" style="font-weight: bold;"></i> </span>
+                    </div>
+                </div>
+                <!-- Calendar  -->
+                <div class="calendar-container"> </div>        
+
                 <div class="time-hour-list">
                     <div class="am">
                         <div class="title"> 오전 </div>
                         <ul>
-                            <li onClick="resvClass(4)">4:00</li>
-                            <li onClick="resvClass(5)">5:00</li>
-                            <li onClick="resvClass(6)">6:00</li>
-                            <li onClick="resvClass(7)">7:00</li>
-                            <li onClick="resvClass(8)">8:00</li>
-                            <li onClick="resvClass(9)">9:00</li>
-                            <li onClick="resvClass(10)">10:00</li>
-                            <li onClick="resvClass(11)">11:00</li>
+                            <li onClick="resvClass(4, this)">04:00</li>
+                            <li onClick="resvClass(5, this)">05:00</li>
+                            <li onClick="resvClass(6, this)">06:00</li>
+                            <li onClick="resvClass(7, this)">07:00</li>
+                            <li onClick="resvClass(8, this)">08:00</li>
+                            <li onClick="resvClass(9, this)">09:00</li>
+                            <li onClick="resvClass(10, this)">10:00</li>
+                            <li onClick="resvClass(11, this)">11:00</li>
                         </ul>
                     </div>
                     <div class="pm">
                         <div class="title"> 오후 </div>
                         <ul>
-                            <li onClick="resvClass(12)">12:00</li>
-                            <li onClick="resvClass(13)">13:00</li>
-                            <li onClick="resvClass(14)">14:00</li>
-                            <li onClick="resvClass(15)">15:00</li>
-                            <li onClick="resvClass(16)">16:00</li>
-                            <li onClick="resvClass(17)">17:00</li>
+                            <li onClick="resvClass(12, this)">12:00</li>
+                            <li onClick="resvClass(13, this)">13:00</li>
+                            <li onClick="resvClass(14, this)">14:00</li>
+                            <li onClick="resvClass(15, this)">15:00</li>
+                            <li onClick="resvClass(16, this)">16:00</li>
+                            <li onClick="resvClass(17, this)">17:00</li>
                         </ul>
                     </div>
                     <div class="night">
                         <div class="title"> 저녁 </div>
                         <ul>
-                            <li onClick="resvClass(18)">18:00</li>
-                            <li onClick="resvClass(19)">19:00</li>
-                            <li onClick="resvClass(20)">20:00</li>
-                            <li onClick="resvClass(21)">21:00</li>
+                            <li onClick="resvClass(18, this)">18:00</li>
+                            <li onClick="resvClass(19, this)">19:00</li>
+                            <li onClick="resvClass(20, this)">20:00</li>
+                            <li onClick="resvClass(21, this)">21:00</li>
                         </ul>
                     </div>
                 </div>
@@ -316,8 +329,12 @@
         
     </div>
 
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/trumbowyg/dist/trumbowyg.min.js"> </script>
     <script src="/reload/reload.js"></script> 
     <script src="js/modal.js"></script> 
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
 </body>
 
 </html>

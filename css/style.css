@@ -326,8 +326,13 @@ line-height: 1.5;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.time-hour-list > div > div{ font-weight: bold;margin-bottom:7px;}
-.time-hour-list > div > ul > li{font-size:21px; padding-left:8px; border-left: 1px solid black; margin-bottom:5px;}
+.time-hour-list > div > div{ font-weight: bold;margin-bottom:7px;
+    margin-left:25px;}
+.time-hour-list > div > ul > li{
+    font-size:21px; padding-left:8px; 
+    /* text-align:center; */
+    margin-left:25px;
+    border-left: 2px solid black; margin-bottom:12px;}
 /*  */
 
 .group .detail-info {
@@ -434,7 +439,7 @@ line-height: 1.5;
 
 .resv-class-container{
     padding: 20px 0px;
-    background:gray;
+    background: #f2f3f5;
 }
 .resv-class-detail{
     margin-top:10px;

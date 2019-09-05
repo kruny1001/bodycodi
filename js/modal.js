@@ -282,7 +282,10 @@ function showContainer(id){
     detail.classList.add('display')
 }
 
-function resvClass(hour){
+function resvClass(hour, elem){
+    console.log(elem)
+    // $(elem).parent().removeClass('font-blue');
+    $(elem).addClass('font-blue');
     // showContainer("reservationConfirm")
     console.log(hour, ' is selected')
 }
