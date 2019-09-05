@@ -116,6 +116,7 @@ function fillDialog(content){
 }
 
 function openDialog(parentId, childId, callBack){
+    
 
     var cc = document.querySelector(parentId)
     var dialog1 = document.querySelector(childId)
@@ -146,6 +147,9 @@ function openDialog(parentId, childId, callBack){
     }
     else if (crntType =='schedule') {
         confirmMessage = "스캐줄을 추가하였습니다."
+    }
+    if(callBack){
+        confirmMessage = callBack()
     }
     let confirmTag = dialog1.querySelector('.confirm-message')
     if(confirmTag)
@@ -282,11 +286,24 @@ var classes2 = [
 loadClasses(classes2, 'expiredTicket')
 
 var openCalendar = false
+
+function pageReady10_5(){
+    $(".up").hide()   
+}
 function toggleCalendar(){
+    
     openCalendar  = !openCalendar
     console.log(openCalendar)
-    if(openCalendar) showCalendar()
-    else hideCalendar()
+    if(openCalendar) {
+        showCalendar()
+        $(".down").hide()
+        $(".up").show()
+    }
+    else {
+        $(".down").show()
+        $(".up").hide()
+        hideCalendar()
+    }
 }
 function hideCalendar(){
     let calContainer = document.querySelector('.calendar-container')
@@ -386,4 +403,14 @@ function saveMemo(){
     // save text 
 }
 
+// 10.5
+function checkValid(){
+    var text = $(".input-desc").val()
+    var hour = $(".time-hour-input").val()
+    var min = $(".time-min-input").val()
+    if(text !== '' && hour !== '' && min !== '')
+        openDialog('#class-complete','#dialogConfirmTemplate', ()=>"스케줄을 추가하였습니다.");
+    else
+        openDialog('#class-complete','#dialogConfirmTemplate', ()=>"필수사항을 입력하셔야 합니다.");
+}
 

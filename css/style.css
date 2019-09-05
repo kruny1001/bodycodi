@@ -444,8 +444,9 @@ line-height: 1.5;
 
 /* 10.5 */
 .input-desc{
-    width: 80%;
-    margin: 0 auto;
+    font-weight:bold;
+    width: 100%;
+    margin: 10 auto;
     display: block;
 }
 
@@ -490,7 +491,7 @@ line-height: 1.5;
 .resv-confirm{
     padding: 20px 10px;
     color:black;
-    background: lightgray;
+    background: #f2f3f5;
 }
 .resv-confirm p{
     text-align: center;
@@ -513,7 +514,7 @@ line-height: 1.5;
 .confirmBtn{
     margin:0px 7px;
     margin-top:10px;
-    padding: 4px 10px;
+    padding: 7px 20px;
     background:white;
     border-radius: 4px;
 
