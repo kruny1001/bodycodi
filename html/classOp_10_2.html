@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="css/dev.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/trumbowyg/dist/ui/trumbowyg.min.css">
 </head>
 
 <body>
@@ -120,13 +121,12 @@
                         <span class="bold font-dart-gray"> MEMO </span>
                         <span class="bold font-light-gray" style="margin-left:12px;">MAY.03.19</span>
                     </div>
-                    <div class="bold ont-light-gray text-right text-xs"> 수정하기</div>
+                    <div id="editBtn" onClick="editMemo()" class="bold ont-light-gray text-right text-xs"> 수정하기</div>
+                    <div id="saveBtn" onClick="saveMemo()" class="bold ont-light-gray text-right text-xs"> 저장하기</div>
                 </div>
                 <hr style="margin-top:4px; margin-bottom:4px;">
-                <div class="memo-description text-black bold">
-                    <p>6월 말 재등록 예정</p>
-                    <p>허리부상 환자 - 척추병원 진단서 확인</p>
-                </div>
+                <div class="memo-description text-black bold"></div>
+                <div id="editor"></div>
             </div>
     
         </div>
@@ -281,8 +281,14 @@
         
     </div>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/trumbowyg/dist/trumbowyg.min.js"> </script>
     <script src="/reload/reload.js"></script> 
     <script src="js/modal.js"></script> 
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script> 
+        loadMemoText()
+    </script>
 </body>
 
 </html>

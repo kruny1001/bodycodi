@@ -348,3 +348,42 @@ function showBottom(){
     btmMenu.classList.remove('none')
     btmMenu.classList.add('display')
 }
+
+function loadMemoText(){
+    let memoContent = "<p>6월말 재등록 예정</p><p>허리부상 환자 - 척추 병원 진잔서 확인&nbsp;</p>"
+    $('.memo-description').html(memoContent);
+    $('#saveBtn').hide()
+}
+// Memo 
+function editMemo(){
+    $('.memo-description').hide()
+    var config = {
+        btns: [
+            ['viewHTML'],
+            ['undo', 'redo'], // Only supported in Blink browsers
+            ['formatting'],
+            ['strong', 'em', 'del'],
+            ['fullscreen']
+        ]
+    }
+    $('#editor').trumbowyg(config);
+    var crntContent = $('.memo-description').html()
+    $('#editor').html(crntContent)
+    $('.trumbowyg-box').show()
+    // menu
+    $('#editBtn').hide()
+    $('#saveBtn').show()
+}
+function saveMemo(){
+    var text = $('#editor').html();
+    console.log(text)
+    $('.memo-description').show()
+    $('.memo-description').html(text);
+    $('.trumbowyg-box').hide()
+    $('#editBtn').show()
+    $('#saveBtn').hide()
+
+    // save text 
+}
+
+

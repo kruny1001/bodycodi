@@ -56,3 +56,5 @@
 
 .temp-menu {background: gray; color:white; display:flex;}
 .temp-menu a {width:120px; padding:15px 20px; display: block; font-size:12px; background:white; color:black; margin:4px;}
+
+.memo-text {padding: 20px 0px; line-height: 22px; width:100%;}
