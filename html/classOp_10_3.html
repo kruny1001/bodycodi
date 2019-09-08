@@ -72,27 +72,27 @@
         <!-- Main Container -->
         <div id="class-complete" class='container group'>
             <div class="detail-info">
-                <div class="time-info">
-                    <div class="hour">16:00 - 17:00</div>
+                <div class="detail-time-info">
+                    <div class="time">16:00 - 17:00</div>
                     <div class="date">6월 3일 화요일</div>
                 </div>
                 <hr>
                 <div style="margin-top:20px; margin-bottom:7px;" class="title"> 리포머 수업 </div>
                 <div class="grid-assets">
                     <div class="asset-row">
-                        <div style="width:40px">예약중</div>
+                        <div class="prop-title">예약중</div>
                         <div>19명</div>
                     </div>
                     <div class="asset-row">
-                        <div style="width:40px">출석</div>
+                            <div class="prop-title">출석</div>
                         <div>12명</div>
                     </div>
                     <div class="asset-row">
-                        <div style="width:40px">결석</div>
+                            <div class="prop-title">결석</div>
                         <div>7명</div>
                     </div>
                     <div class="asset-row">
-                        <div style="width:40px">정원</div>
+                            <div class="prop-title">정원</div>
                         <div>22명</div>
                     </div>
                 </div>
@@ -114,61 +114,73 @@
 
             <div class="user-list">
                 <div> 이용회원 목록 (<span class="userNum">12</span>)</div>
-                
                 <ul>
                     <li class="user-detail">
                         <section class="left-col">
-                            <div> <img class="user-img" src="" /> </div>
+                            <img class="user-img" src="" />
                             <div id="user-name" class="user-name bold"> 김가은(31세) </div>
-                            <div style="margin-left:auto;" id="status"> <div class="circle-value bg-blue bold">출</div> </div>
-                            <div id='num'> <div class="circle-value bg-gray" >99</div>  </div>
+                            <div style="margin-left:auto;     width: 10px;"></div>
+                            <div id="status" class="circle-container">  
+                                <div class="circle-value bg-blue bold">출</div> 
+                            </div>
+                            <div id='num' class="circle-container">
+                                <div class="circle-value bg-gray" >99</div>  
+                            </div>
                         </section>
                         <section class="right-col">
-                            <div style="width:33%;margin: 0px 4px;"> <button class="button-cust"
+                            <div class="button-cust-container"> <button class="button-cust"
                                 onclick="openTargetDialog('delete', {userName: '양하은', crntCount: 40})" 
                                 >삭제</button> </div>
-                            <div style="width:33%; margin: 0px 4px;"> <button class="button-cust red-font"
+                                <div class="button-cust-container"> <button class="button-cust red-font"
                                 onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
                                 >결석처리</button> </div>
-                            <div style="width:33%; margin: 0px 4px;"> <button class="button-cust btn-disabled"
+                                <div class="button-cust-container"> <button class="button-cust btn-disabled"
                                 
                                 >출석처리</button> </div>    
                         </section>
                     </li>
                     <li class="user-detail">
+
                         <section class="left-col">
-                            <div> <img class="user-img" src="" /> </div>
+                            <img class="user-img" src="" />
                             <div id="user-name" class="user-name bold"> 김가은(31세) </div>
-                            <div id="status" style="margin-left:auto;"> <div class="circle-value bg-green bold">예</div> </div>
-                            <div id='num'> <div class="circle-value bg-gray" >99</div>  </div>
+                            <div style="margin-left:auto;     width: 10px;"></div>
+                            <div id="status" class="circle-container"> 
+                                <div class="circle-value bg-green bold">예</div> 
+                            </div>
+                            <div id='num' class="circle-container">  <div class="circle-value bg-gray" >99</div>  </div>
                         </section>
+
                         <section class="right-col">
-                            <div style="width:33%;margin: 0px 4px;"> <button class="button-cust"
+                            <div class="button-cust-container"> <button class="button-cust"
                                 onclick="openTargetDialog('cancel', {userName: '양하은', crntCount: 40})" 
                                 >예약취소</button> </div>
-                            <div style="width:33%;margin: 0px 4px;"> <button class="button-cust red-font btn-disabled"
+                            <div class="button-cust-container"> <button class="button-cust red-font btn-disabled"
                                 
                                 >결석처리</button> </div>
-                            <div style="width:33%;margin: 0px 4px;"> <button class="button-cust font-blue"
+                            <div class="button-cust-container"> <button class="button-cust font-blue"
                                 onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
                                 >출석처리</button> </div>
                         </section>
+
                     </li>
                     <li class="user-detail">
                         <section class="left-col">
                             <div> <img class="user-img" src="" /> </div>
                             <div id="user-name" class="user-name bold"> 데브웨이-회원1 (31세) </div>
-                            <div style="margin-left:auto;" id="status"> <div class="circle-value bg-red bold">결</div> </div>
-                            <div id='num'> <div class="circle-value bg-gray" >99</div>  </div>
+                            <div style="margin-left:auto;     width: 10px;"></div>
+
+                            <div id="status" class="circle-container">  <div class="circle-value bg-red bold">결</div> </div>
+                            <div id='num' class="circle-container"> <div class="circle-value bg-gray" >99</div>  </div>
                         </section>
                         <section class="right-col">
-                            <div style="width:33%;margin: 0px 4px;"> <button class="button-cust"
+                            <div class="button-cust-container"> <button class="button-cust"
                                 onclick="openTargetDialog('delete', {userName: '양하은', crntCount: 40})" 
                                 >삭제</button> </div>
-                            <div style="width:33%; margin: 0px 4px;"> <button class="button-cust red-font"
+                            <div class="button-cust-container"> <button class="button-cust red-font"
                                 onclick="openTargetDialog('absent', {userName: '양하은', crntCount: 40})" 
                                 >결석처리</button> </div>
-                            <div style="width:33%; margin: 0px 4px;"> <button class="button-cust"
+                            <div class="button-cust-container"> <button class="button-cust"
                                 onclick="openTargetDialog('attendance', {userName: '양하은', crntCount: 40})" 
                                 >출석처리</button> </div>
                         </section>
