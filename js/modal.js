@@ -430,3 +430,22 @@ function checkValid(){
         openDialog('#class-complete','#dialogConfirmTemplate', ()=>"필수사항을 입력하셔야 합니다.");
 }
 
+function activateInput(targetClass){
+    if(targetClass == 'clockActive'){
+        $('.clockActive').show()
+        $('.clock').hide()
+        $('.calActive').hide()
+        $('.cal').show()
+        $('.select-time').show()
+        $('.type-time').hide()
+    } else if( targetClass == 'calActive'){
+        $('.clockActive').hide()
+        $('.clock').show()
+        $('.calActive').show()
+        $('.cal').hide()
+        $('.type-time').show()
+        $('.select-time').hide()
+    }
+    
+}
+

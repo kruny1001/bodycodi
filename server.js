@@ -9,6 +9,10 @@ app.use('/css', express.static('css'))
 app.use('/js', express.static('js'))
 app.use('/node_modules', express.static('node_modules'))
 
+router.get('/video',function(req,res){
+  res.sendFile(path.join(__dirname+'/index.html'));
+});
+
 router.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/html/classOp_10_2.html'));
 });

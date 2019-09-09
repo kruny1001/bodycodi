@@ -185,7 +185,7 @@ h3{
     #dateStr {font-size:10px;}
     #endDateStr {font-size:10px;}
 
-    .time-input {padding:40px 70px !important;}
+    .time-input {padding:20px 70px !important;}
     .resv-confirm{ font-size:12px;}
     .profile-list .image{width: 25px!important; height:25px !important;}
     .profile-list .name {font-size: 9px !important; line-height: 25px !important;}
@@ -218,6 +218,22 @@ h3{
     .resv-button{
         font-size:11px;
     }
+    .time-am-input{ padding:5px 10px; width:50px; text-align: center; font-size: 0.7rem !important;}
+    .time-pm-input{ padding:5px 10px; width:50px; text-align: center;font-size: 0.7rem !important;}
+    .time-hour-input{
+        width:50px!important;
+        border: 1px solid #fff !important;
+        text-align: center !important;
+        padding: 5px !important;
+        font-size: 1.3rem !important;
+    }
+    .time-min-input{
+        width:50px!important;
+        padding: 5px !important;
+        border: 1px solid #fff !important;
+        font-size: 1.3rem !important;
+        text-align: center !important;
+    }
 }
 
 @media screen and (min-width: 420px) {
@@ -229,8 +245,24 @@ h3{
     }
 }
 
-
-
+.select-time{
+    vertical-align: middle;
+    padding-top: 10%;
+    height:76px;
+    width: fit-content;
+    margin: 10px auto;
+    text-align: center;
+}
+.time-label{
+    margin: 0px auto;
+    display: block;
+}
+.select-time-value{
+    font-size:1rem;
+    padding: 10px;
+    margin: 0px auto;
+    display: block;
+}
 .memo-title {
     display:flex;
 }
@@ -291,7 +323,7 @@ h3{
     width:70%; 
     display:flex; border-bottom: 0.7px solid #a5a5a5; padding-bottom:10px; padding-top:10px;}
 .profile-list .image { border-radius: 10px; border: 1.4px solid #d4d2d2; margin-right:4px;}
-.profile-list .name { font-size:14px; line-height:45px; color:#000; padding-left:4px; padding-right:4px;}
+.profile-list .name { font-size:11px; line-height:45px; color:#000; padding-left:4px; padding-right:4px;}
 .profile-list .phone { font-size:14px;  line-height:45px; color: #696c74; padding-left:4px; padding-right:4px;}
 
 
@@ -571,6 +603,7 @@ line-height: 1.5;
     border:1px solid gray;
 }
 .time-input{
+    height:150px;
     padding: 70px;
     border:1px solid gray;
 }
@@ -583,14 +616,14 @@ line-height: 1.5;
     text-align: center !important;
     padding: 5px !important;
     /* color:white; */
-    font-size: 2rem !important;
+    font-size: 2rem;
 }
 .time-min-input{
     width:60px;
     padding: 5px !important;
     border: 1px solid #fff !important;
     /* background:gray !important; */
-    font-size: 2rem !important;
+    font-size: 2rem;
     text-align: center !important;
     /* color:white; */
 }
@@ -654,3 +687,11 @@ line-height: 1.5;
 }
 
 .overflowEnable{overflow-y:scroll;     max-height: 80px;}
+
+.clockActive, .clock {
+    margin-right:4px; margin-left:auto; 
+}
+.clockActive, .clock, .calActive, .cal{ 
+    height:20px; width:20px; 
+}
+.calActive, .cal{ margin-right:4px;}

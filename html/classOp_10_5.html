@@ -89,7 +89,11 @@
             <section style="display: flex; margin: 10px 0px;">
                 <div class="bg-blue" style="margin-right:7px; padding:4px 10px; border-radius: 4px; color:#fff"> 시작 </div>
                 <div id="dateStr" class="bold" style="font-weight:bold; line-height: 22px;"> 6월 3일 화요일 오전 9시 00분 </div>
-                <div style="width:40%;"></div>
+                <!-- <div style="width:40%;"></div> -->
+                <div class="clockActive" onClick="activateInput('clockActive')"> <img src="assets/clockActive.png"> </div>
+                <div class="clock" onClick="activateInput('clockActive')"> <img src="assets/clock.png"> </div>
+                <div class="calActive" onClick="activateInput('calActive')"> <img src="assets/calActive.png"> </div>
+                <div class="cal" onClick="activateInput('calActive')"> <img  src="assets/cal.png"> </div>
                 <!-- <button cklass="clock" style="margin-left:10px;">clock</button>
                 <button class="keyboard" style="margin-left:10px;">keyboard</button> -->
             </section>
@@ -101,23 +105,32 @@
             </section>
 
             <section id="time-input" class="time-input">
-                <section>
-                    <div style="width: fit-content; margin: 0px auto; display: flex;">
-                            <div class="time-am-input" onClick="selectAMPM(true)">오전</div>
-                            <div style="margin: 3px 10px; border-right: 1px solid black;"></div>
-                            <div class="time-pm-input" onClick="selectAMPM(false)">오후</hr>
-                        </div>
+                <section class="select-time">
+                    <label class="time-label" for="appt-time">시간을 선택해주세요 </label>
+                    <input class="select-time-value" type="time" value="09:00">
                 </section>
-                <section>
-                        <div style="width: fit-content; margin: 10px auto; display: flex; text-align:center;" >
-                                <input class="time-hour-input" type="number" name="quantity" min="1" max="12" value="9">
-                                <div style="font-size:40px; margin-left:10px; margin-right:10px;">:</div>
-                                <input class="time-min-input" type="number" name="quantity" min="0" max="60" value="0">
+                <section class="type-time">
+                    <section>
+                        <div style="width: fit-content; margin: 0px auto; display: flex;">
+                                <div class="time-am-input" onClick="selectAMPM(true)">오전</div>
+                                <div style="margin: 3px 10px; border-right: 1px solid black;"></div>
+                                <div class="time-pm-input" onClick="selectAMPM(false)">오후</hr>
                             </div>
+                    </section>
+                    <section>
+                            <div style="width: fit-content; margin: 10px auto; display: flex; text-align:center;" >
+                                    <input class="time-hour-input" type="number" name="quantity" min="1" max="12" value="9">
+                                    <div style="font-size:40px; margin-left:10px; margin-right:10px;">:</div>
+                                    <input class="time-min-input" type="number" name="quantity" min="0" max="60" value="0">
+                                </div>
+                    </section>
                 </section>
                 
+                
 <script>
+
 $(function () {
+    activateInput('clockActive')
  $(".time-min-input").keydown(function () {
    // Save old value.
    if (!$(this).val() || (parseInt($(this).val()) <= 59 && parseInt($(this).val()) >= 0))
@@ -151,6 +164,7 @@ $(function () {
             <section style="margin: 10px 0px; display: flex;">
                 <div style="margin-right:7px; background:gray; padding:4px 10px; border-radius: 4px; color:#fff"> 종료 </div>
                 <div id="endDateStr" style="font-weight:bold; line-height: 22px;"> 6월 3일 화요일 오전 2시 10분 </div>
+                
             </section>
 
             <section class='bold resv-confirm'>
