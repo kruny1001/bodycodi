@@ -335,15 +335,15 @@ function showCalendar(){
 var isAM = true;
 function selectAMPM(value){
     isAM = value
-    let amInput = document.querySelector('.time-am-input')
-    let pmInput = document.querySelector('.time-pm-input')
+    let amInput = $('.time-am-input')
+    let pmInput = $('.time-pm-input')
     if(isAM){
-        amInput.classList.add('active')
-        pmInput.classList.remove('active')
+        amInput.addClass('active')
+        pmInput.removeClass('active')
     }
     else{
-        pmInput.classList.add('active')
-        amInput.classList.remove('active')
+        pmInput.addClass('active')
+        amInput.removeClass('active')
         
     }
 }
