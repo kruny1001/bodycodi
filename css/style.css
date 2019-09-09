@@ -598,13 +598,16 @@ line-height: 1.5;
     display: block;
     padding: 0px 20px;
 }
+.openTime, .closeTime{
+    margin-right:7px; padding:4px 10px; border-radius: 4px; color:#fff
+}
 
 .time-select{
     border:1px solid gray;
 }
 .time-input{
-    height:150px;
-    padding: 70px;
+    height:190px;
+    padding: 40px 70px;
     border:1px solid gray;
 }
 .time-am-input{ padding:5px 10px; width:60px; text-align: center; font-size: 1rem;}

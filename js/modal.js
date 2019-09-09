@@ -449,3 +449,26 @@ function activateInput(targetClass){
     
 }
 
+function openTimeInput(type){
+    if(type == 'openTime') {
+        $('#open-time-input').show()
+        $('#close-time-input').hide()
+        $('.openTime').addClass('bg-blue')
+        $('.openTime').removeClass('bg-gray')
+        $('.closeTime').addClass('bg-gray')
+        $('.closeTime').removeClass('bg-red')
+        $('.openMenu').show()
+        $('.closeMenu').hide()
+    }
+    else {
+        $('#open-time-input').hide()
+        $('#close-time-input').show()
+        $('.openTime').addClass('bg-gray')
+        $('.openTime').removeClass('bg-blue')
+        $('.closeTime').addClass('bg-red')
+        $('.closeTime').removeClass('bg-gray')
+        $('.openMenu').hide()
+        $('.closeMenu').show()
+    }
+}
+openTimeInput('openTime')
