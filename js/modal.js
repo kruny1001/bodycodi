@@ -333,19 +333,34 @@ function showCalendar(){
 // showContainer('reservationConfirm');
 
 var isAM = true;
-function selectAMPM(value){
+function selectAMPM(value, target){
     isAM = value
-    let amInput = $('.time-am-input')
-    let pmInput = $('.time-pm-input')
-    if(isAM){
-        amInput.addClass('active')
-        pmInput.removeClass('active')
+    if(target =='am'){
+        let amInput = $('#open-time-input .time-am-input')
+        let pmInput = $('#open-time-input .time-pm-input')
+        if(isAM){
+            amInput.addClass('active')
+            pmInput.removeClass('active')
+        }
+        else{
+            pmInput.addClass('active')
+            amInput.removeClass('active')
+            
+        }
+    } else {
+        let amInput = $('#close-time-input .time-am-input')
+        let pmInput = $('#close-time-input .time-pm-input')
+        if(isAM){
+            amInput.addClass('active')
+            pmInput.removeClass('active')
+        }
+        else{
+            pmInput.addClass('active')
+            amInput.removeClass('active')
+            
+        }
     }
-    else{
-        pmInput.addClass('active')
-        amInput.removeClass('active')
-        
-    }
+    
 }
 
 var crntType = 'schedule'
