@@ -85,26 +85,22 @@
             <div style="width: 100%;">
                 <input class="input-desc" type="text">
             </div>
+
             <div style="margin-top:10px;"> 시작시간과 종료시간을 선택해 주세요.</div>
+
             <section style="display: flex; margin: 10px 0px;">
-                <div class="bg-blue" style="margin-right:7px; padding:4px 10px; border-radius: 4px; color:#fff"> 시작 </div>
+                <div class="openTime bg-blue" onClick="openTimeInput('openTime')"> 시작 </div>
                 <div id="dateStr" class="bold" style="font-weight:bold; line-height: 22px;"> 6월 3일 화요일 오전 9시 00분 </div>
-                <!-- <div style="width:40%;"></div> -->
-                <div class="clockActive" onClick="activateInput('clockActive')"> <img src="assets/clockActive.png"> </div>
-                <div class="clock" onClick="activateInput('clockActive')"> <img src="assets/clock.png"> </div>
-                <div class="calActive" onClick="activateInput('calActive')"> <img src="assets/calActive.png"> </div>
-                <div class="cal" onClick="activateInput('calActive')"> <img  src="assets/cal.png"> </div>
-                <!-- <button cklass="clock" style="margin-left:10px;">clock</button>
-                <button class="keyboard" style="margin-left:10px;">keyboard</button> -->
+              
+                <div class="openMenu" style="margin-left:auto; display:flex;">
+                    <div class="clockActive" onClick="activateInput('clockActive')"> <img src="assets/clockActive.png"> </div>
+                    <div class="clock" onClick="activateInput('clockActive')"> <img src="assets/clock.png"> </div>
+                    <div class="calActive" onClick="activateInput('calActive')"> <img src="assets/calActive.png"> </div>
+                    <div class="cal" onClick="activateInput('calActive')"> <img  src="assets/cal.png"> </div>
+                </div>
             </section>
 
-            <!-- <hr style="margin:10px auto;"> -->
-
-            <section id="time-select" class="time-select none">
-
-            </section>
-
-            <section id="time-input" class="time-input">
+            <section id="open-time-input" class="time-input">
                 <section class="select-time">
                     <label class="time-label" for="appt-time">시간을 선택해주세요 </label>
                     <input class="select-time-value" type="time" value="09:00">
@@ -112,9 +108,9 @@
                 <section class="type-time">
                     <section>
                         <div style="width: fit-content; margin: 0px auto; display: flex;">
-                                <div class="time-am-input" onClick="selectAMPM(true)">오전</div>
+                                <div class="time-am-input" onClick="selectAMPM(true, 'am')">오전</div>
                                 <div style="margin: 3px 10px; border-right: 1px solid black;"></div>
-                                <div class="time-pm-input" onClick="selectAMPM(false)">오후</hr>
+                                <div class="time-pm-input" onClick="selectAMPM(false, 'am')">오후</hr>
                             </div>
                     </section>
                     <section>
@@ -125,48 +121,76 @@
                                 </div>
                     </section>
                 </section>
-                
-                
-<script>
-
-$(function () {
-    activateInput('clockActive')
- $(".time-min-input").keydown(function () {
-   // Save old value.
-   if (!$(this).val() || (parseInt($(this).val()) <= 59 && parseInt($(this).val()) >= 0))
-   $(this).data("old", $(this).val());
- });
- $(".time-min-input").keyup(function () {
-   // Check correct, else revert back to old value.
-   if (!$(this).val() || (parseInt($(this).val()) <= 59 && parseInt($(this).val()) >= 0))
-     ;
-   else
-     $(this).val($(this).data("old"));
- });
- $(".time-hour-input").keydown(function () {
-   // Save old value.
-   if (!$(this).val() || (parseInt($(this).val()) <= 12 && parseInt($(this).val()) >= 1))
-   $(this).data("old", $(this).val());
- });
- $(".time-hour-input").keyup(function () {
-   // Check correct, else revert back to old value.
-   if (!$(this).val() || (parseInt($(this).val()) <= 12 && parseInt($(this).val()) >= 1))
-     ;
-   else
-     $(this).val($(this).data("old"));
- });
- selectAMPM(true) // set am as default
-
-});
-</script>
             </section>
-            
+
+            <script>
+
+                $(function () {
+                    activateInput('clockActive')
+                 $(".time-min-input").keydown(function () {
+                   // Save old value.
+                   if (!$(this).val() || (parseInt($(this).val()) <= 59 && parseInt($(this).val()) >= 0))
+                   $(this).data("old", $(this).val());
+                 });
+                 $(".time-min-input").keyup(function () {
+                   // Check correct, else revert back to old value.
+                   if (!$(this).val() || (parseInt($(this).val()) <= 59 && parseInt($(this).val()) >= 0))
+                     ;
+                   else
+                     $(this).val($(this).data("old"));
+                 });
+                 $(".time-hour-input").keydown(function () {
+                   // Save old value.
+                   if (!$(this).val() || (parseInt($(this).val()) <= 12 && parseInt($(this).val()) >= 1))
+                   $(this).data("old", $(this).val());
+                 });
+                 $(".time-hour-input").keyup(function () {
+                   // Check correct, else revert back to old value.
+                   if (!$(this).val() || (parseInt($(this).val()) <= 12 && parseInt($(this).val()) >= 1))
+                     ;
+                   else
+                     $(this).val($(this).data("old"));
+                 });
+                 selectAMPM(true) // set am as default
+                
+                });
+            </script>
+
             <section style="margin: 10px 0px; display: flex;">
-                <div style="margin-right:7px; background:gray; padding:4px 10px; border-radius: 4px; color:#fff"> 종료 </div>
+                <div class="bg-gray closeTime" onClick="openTimeInput('closeTime')"> 종료 </div>
                 <div id="endDateStr" style="font-weight:bold; line-height: 22px;"> 6월 3일 화요일 오전 2시 10분 </div>
+                <div class="closeMenu" style="margin-left:auto; display:flex;">
+                    <div class="clockActive" onClick="activateInput('clockActive')"> <img src="assets/clockActive.png"> </div>
+                    <div class="clock" onClick="activateInput('clockActive')"> <img src="assets/clock.png"> </div>
+                    <div class="calActive" onClick="activateInput('calActive')"> <img src="assets/calActive.png"> </div>
+                    <div class="cal" onClick="activateInput('calActive')"> <img  src="assets/cal.png"> </div>
+                </div>
                 
             </section>
 
+            <section id="close-time-input" class="time-input">
+                <section class="select-time">
+                    <label class="time-label" for="appt-time">시간을 선택해주세요 </label>
+                    <input class="select-time-value" type="time" value="09:00">
+                </section>
+                <section class="type-time">
+                    <section>
+                        <div style="width: fit-content; margin: 0px auto; display: flex;">
+                                <div class="time-am-input" onClick="selectAMPM(true, 'pm')">오전</div>
+                                <div style="margin: 3px 10px; border-right: 1px solid black;"></div>
+                                <div class="time-pm-input" onClick="selectAMPM(false, 'pm')">오후</hr>
+                            </div>
+                    </section>
+                    <section>
+                            <div style="width: fit-content; margin: 10px auto; display: flex; text-align:center;" >
+                                    <input class="time-hour-input" type="number" name="quantity" min="1" max="12" value="9">
+                                    <div style="font-size:40px; margin-left:10px; margin-right:10px;">:</div>
+                                    <input class="time-min-input" type="number" name="quantity" min="0" max="60" value="0">
+                                </div>
+                    </section>
+                </section>
+            </section>
+                
             <section class='bold resv-confirm'>
                 <p> 기타 스케줄이 설정되면</p>
                 <p> 해당 시간에 회원 개인서비스를 예약할 수 없습니다.</p>

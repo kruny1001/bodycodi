@@ -185,7 +185,7 @@ h3{
     #dateStr {font-size:10px;}
     #endDateStr {font-size:10px;}
 
-    .time-input {padding:20px 70px !important;}
+    .time-input {padding:50px 70px !important;}
     .resv-confirm{ font-size:12px;}
     .profile-list .image{width: 25px!important; height:25px !important;}
     .profile-list .name {font-size: 9px !important; line-height: 25px !important;}
@@ -598,13 +598,16 @@ line-height: 1.5;
     display: block;
     padding: 0px 20px;
 }
+.openTime, .closeTime{
+    margin-right:7px; padding:4px 10px; border-radius: 4px; color:#fff
+}
 
 .time-select{
     border:1px solid gray;
 }
 .time-input{
-    height:150px;
-    padding: 70px;
+    height:190px;
+    padding: 25px 70px;
     border:1px solid gray;
 }
 .time-am-input{ padding:5px 10px; width:60px; text-align: center; font-size: 1rem;}
@@ -671,7 +674,9 @@ line-height: 1.5;
     line-height: 25px;
     color: #696c74;
 }
-
+.type-time{
+    padding-top: 10%;
+}
 .tab-list {
     list-style-type: none;
 }

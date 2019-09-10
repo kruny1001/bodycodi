@@ -333,19 +333,34 @@ function showCalendar(){
 // showContainer('reservationConfirm');
 
 var isAM = true;
-function selectAMPM(value){
+function selectAMPM(value, target){
     isAM = value
-    let amInput = document.querySelector('.time-am-input')
-    let pmInput = document.querySelector('.time-pm-input')
-    if(isAM){
-        amInput.classList.add('active')
-        pmInput.classList.remove('active')
+    if(target =='am'){
+        let amInput = $('#open-time-input .time-am-input')
+        let pmInput = $('#open-time-input .time-pm-input')
+        if(isAM){
+            amInput.addClass('active')
+            pmInput.removeClass('active')
+        }
+        else{
+            pmInput.addClass('active')
+            amInput.removeClass('active')
+            
+        }
+    } else {
+        let amInput = $('#close-time-input .time-am-input')
+        let pmInput = $('#close-time-input .time-pm-input')
+        if(isAM){
+            amInput.addClass('active')
+            pmInput.removeClass('active')
+        }
+        else{
+            pmInput.addClass('active')
+            amInput.removeClass('active')
+            
+        }
     }
-    else{
-        pmInput.classList.add('active')
-        amInput.classList.remove('active')
-        
-    }
+    
 }
 
 var crntType = 'schedule'
@@ -449,3 +464,26 @@ function activateInput(targetClass){
     
 }
 
+function openTimeInput(type){
+    if(type == 'openTime') {
+        $('#open-time-input').show()
+        $('#close-time-input').hide()
+        $('.openTime').addClass('bg-blue')
+        $('.openTime').removeClass('bg-gray')
+        $('.closeTime').addClass('bg-gray')
+        $('.closeTime').removeClass('bg-red')
+        $('.openMenu').show()
+        $('.closeMenu').hide()
+    }
+    else {
+        $('#open-time-input').hide()
+        $('#close-time-input').show()
+        $('.openTime').addClass('bg-gray')
+        $('.openTime').removeClass('bg-blue')
+        $('.closeTime').addClass('bg-red')
+        $('.closeTime').removeClass('bg-gray')
+        $('.openMenu').hide()
+        $('.closeMenu').show()
+    }
+}
+openTimeInput('openTime')
