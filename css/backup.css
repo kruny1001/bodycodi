@@ -56,8 +56,8 @@ h3{
 .container .header-bottom-line{ height:2.7px; background:#d4d2d2;}
 .detail-time-info{ display:flex;}
 .detail-time-info span{ width:50%;}
-.detail-time-info .time{text-align: left; color:#000000; font-size: 13px;}
-.detail-time-info .date{font-size: 12px; margin-left:auto; text-align: right; color:#696c74;}
+.detail-time-info .time{text-align: left; color:#000000}
+.detail-time-info .date{margin-left:auto; text-align: right; color:#696c74;}
 
 .detail-user-info {
     margin-top:12px;
@@ -82,7 +82,6 @@ h3{
     text-align: left !important;
 }
 .detail-info .resv{
-    font-size:8px;
     display: inline-block;
     padding: 4px 3px;
     line-height: 7px;
@@ -94,7 +93,7 @@ h3{
 .property-list{
     margin-top:12px;
 }
-.detail-info .properties { display:flex; margin-top:6px; font-size:12px;}
+.detail-info .properties { display:flex; margin-top:6px;}
 .detail-info .properties .prop-title { color:#696c74;  font-weight: bold; width:60px;}
 .detail-info .properties .prop-value { margin-left:12px;}
 .detail-info .profile-img {position: absolute; right:12px; top: 60px;}
@@ -133,14 +132,12 @@ h3{
 
 .memo-list{
     border: 1.4px solid #d4d2d2;
-    /* font-size:14px; */
-    font-size:13px;
+    font-size:14px;
     padding: 12px;
 }
 
 .menu-title {
-    /* font-size: 14px; */
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     border-left: 2px solid;
     padding-left: 12px;
@@ -162,7 +159,7 @@ h3{
 .checkbox-confirom checkbox-input{
     display: inline-block !important; margin-bottom: 10px;
 }
-/* @media screen and (max-width: 380px) {
+@media screen and (max-width: 380px) {
     .detail-info .title {font-size:13px;}
     .detail-info .grid-assets {font-size:10px;}
     .asset-row div {width:30px;}
@@ -237,17 +234,16 @@ h3{
         font-size: 1.3rem !important;
         text-align: center !important;
     }
-} */
+}
 
-/* @media screen and (min-width: 420px) {
+@media screen and (min-width: 420px) {
     .menu-title {
         font-size:13px; 
     }
     .detail-user-info .name {
-        font-size:13px;
+        font-size:17px;
     }
-} */
-
+}
 .shadow-btn {
     -webkit-box-shadow: 1px 1px 7px -1px rgba(0,0,0,0.58);
 -moz-box-shadow: 1px 1px 7px -1px rgba(0,0,0,0.58);
@@ -284,7 +280,6 @@ box-shadow: 1px 1px 7px -1px rgba(0,0,0,0.58);
     color: #a5a5a5;
 }
 .memo-description {
-    font-size:12px;
     font-weight:bold;
     padding-top:7px;
     line-height: 16px;
@@ -332,7 +327,7 @@ box-shadow: 1px 1px 7px -1px rgba(0,0,0,0.58);
     width:70%; 
     display:flex; border-bottom: 0.7px solid #a5a5a5; padding-bottom:10px; padding-top:10px;}
 .profile-list .image { border-radius: 10px; border: 1.4px solid #d4d2d2; margin-right:4px;}
-.profile-list .name { font-size:12px; line-height:45px; color:#000; padding-left:4px; padding-right:4px;}
+.profile-list .name { font-size:11px; line-height:45px; color:#000; padding-left:4px; padding-right:4px;}
 .profile-list .phone { font-size:14px;  line-height:45px; color: #696c74; padding-left:4px; padding-right:4px;}
 
 
@@ -438,12 +433,9 @@ line-height: 1.5;
 .user-detail{height:45px;}
 .user-detail .user-name{
     /* letter-spacing: 0.06em; */
-    font-size:12px !important; line-height:35px !important; width: 262px;
-    /* width:200px; */
-    padding-left:4px; 
-    /* font-size:12px;  */
-    /* line-height: 45px;  */
-    font-weight: bold;
+    width:200px;
+    padding-left:4px; font-size:12px; 
+    line-height: 45px; font-weight: bold;
     word-break: break-all;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -489,7 +481,6 @@ line-height: 1.5;
 
 .grid-assets {
     width:100%;
-    font-size:12px;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 25px;
@@ -508,7 +499,7 @@ line-height: 1.5;
     margin-right:10px;
 }
 
-.group .user-list {padding:20px 4px; font-size:10px;}
+.group .user-list {padding:20px 4px;}
 .group .user-detail{
     
     width:100%;
